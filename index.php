@@ -153,7 +153,7 @@
         'habits' : document.getElementById("habits").value
       };
 
-      var return_to = '/insert.php?pin=' + <?php echo $pin ?> + "&return_to=" + getQueryParams('return_to', 'pebblejs://close#') + '&token=<?php echo $_GET[token] ?>&ifttt=' + options.ifttt + '&wu=' + options.wu + '&forecast=' + options.forecast + '&wolfram=' + options.wolfram + '&habits=' + options.habits;//getQueryParams('return_to', 'pebblejs://close#');
+      var return_to = '/insert.php?pin=' + <?php echo $pin ?> + "&return_to=" + encodeURIComponent(getQueryParams('return_to', 'pebblejs://close#')) + '&token=<?php echo $_GET[token] ?>&ifttt=' + options.ifttt + '&wu=' + options.wu + '&forecast=' + options.forecast + '&wolfram=' + options.wolfram + '&habits=' + options.habits;//getQueryParams('return_to', 'pebblejs://close#');
       
       document.location = return_to;
     }
