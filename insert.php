@@ -66,6 +66,8 @@
 	function close(){
 		var options = { 'pin' : <?php echo "$_GET[pin]"; ?> };
 
+    console.log(options.pin);
+
 		document.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
 	}
 
