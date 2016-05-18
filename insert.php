@@ -66,7 +66,7 @@
 	function submit(){
 		var options = { 'pin' : <?php echo "$_GET[pin]"; ?> };
 
-		document.location = "https://cloudpebble.net/ide/emulator/config?" + encodeURIComponent(JSON.stringify(options));
+		document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
 	}
 
 	function back(){
