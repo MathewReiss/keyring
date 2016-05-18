@@ -49,7 +49,7 @@
 			if($result){
       			echo '<div class="item-container-header"><font size="+2">Success!</font></div>';
       			echo '<div class="button-container">';
-      			echo '	<input type="button" class="item-button" value="CLOSE" onclick="close()">';
+      			echo '	<input type="button" class="item-button" value="CLOSE" onclick="submit()">';
       			echo '</div>';
       		}
       		else{
@@ -57,13 +57,16 @@
       			echo '<div class="button-container">';
       			echo '	<input type="button" class="item-button" value="RETURN TO SETTINGS" onclick="back()">';
       			echo '</div>';
-			}
+			   }
       ?>
   </div>
 </form>
 
 <script>
-	function close(){
+	function submit(){
+
+    console.log("Submit");
+
 		var options = { 'pin' : <?php echo "$_GET[pin]"; ?> };
 
     console.log(options.pin);
