@@ -71,6 +71,8 @@
 
     console.log(options.pin);
 
+    console.log('pebblejs://close#' + encodeURIComponent(JSON.stringify(options)));
+
 		document.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
 	}
 
