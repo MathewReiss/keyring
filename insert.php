@@ -51,6 +51,8 @@
       			echo '<div class="button-container">';
       			echo '	<input type="button" class="item-button" value="CLOSE" onclick="submit()">';
       			echo '</div>';
+
+            echo json_encode($_GET);
       		}
       		else{
       			echo '<div class="item-container-header"><font size="+2">Error</font></div>';
