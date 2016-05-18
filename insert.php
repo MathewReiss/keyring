@@ -64,16 +64,9 @@
 
 <script>
 	function submit(){
-
-    console.log("Submit");
-
 		var options = { 'pin' : <?php echo "$_GET[pin]"; ?> };
 
-    console.log(options.pin);
-
-    console.log('pebblejs://close#' + encodeURIComponent(JSON.stringify(options)));
-
-		document.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
+		document.location = <?php echo "_GET[return_to]"; ?> + encodeURIComponent(JSON.stringify(options));
 	}
 
 	function back(){
