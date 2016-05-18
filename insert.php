@@ -66,7 +66,7 @@
 	function submit(){
 		var options = { 'pin' : <?php echo "$_GET[pin]"; ?> };
 
-		document.location = <?php echo "_GET[return_to]"; ?> + encodeURIComponent(JSON.stringify(options));
+		document.location = decodeURIComponent(<?php echo "_GET[return_to]"; ?>) + encodeURIComponent(JSON.stringify(options));
 	}
 
 	function back(){
