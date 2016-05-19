@@ -1,7 +1,7 @@
 <?php
-	$servername = "us-cdbr-iron-east-04.cleardb.net:3306";
-	$username = "b8f6d467c68b56";
-	$password = "a3212cc9";
+	$servername = "$_ENV[DB_SERVERNAME]";
+	$username = "$_ENV[DB_USER]";
+	$password = "$_ENV[DB_PASSWORD]";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password);
@@ -36,6 +36,9 @@
 
 		$result = $result + $array;
 
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Methods: *");
+		header("Content-type: application/json");
 		echo json_encode($result, JSON_PRETTY_PRINT);
 	}
 	else{
