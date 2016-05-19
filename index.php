@@ -16,9 +16,9 @@
       <div class="item-container-footer"><font size="+1">
   
         <?php
-          $servername = "us-cdbr-iron-east-04.cleardb.net:3306";
-          $username = "b8f6d467c68b56";
-          $password = "a3212cc9";
+          $servername = "$_ENV[DB_SERVERNAME]";
+          $username = "$_ENV[DB_USER]";
+          $password = "$_ENV[DB_PASSWORD]";
 
           $conn = new mysqli($servername, $username, $password);
 
