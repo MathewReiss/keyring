@@ -62,7 +62,7 @@
 ?>
 
 
-<!--
+/*
 		foreach($weather_indices as $key){}
 
 		$array = [];
@@ -75,4 +75,4 @@
 		$array = array(keys => $array);
 
 		$result = $result + $array;
--->
+*/
