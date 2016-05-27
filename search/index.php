@@ -54,6 +54,10 @@
 		header("Content-type: application/json");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
+	else if(!is_numeric($_GET['pin'])){
+		$array = array(success => false, error => "PINs must be numeric-only.");
+		echo json_encode($array, JSON_PRETTY_PRINT);
+	}
 	else{
 		$array = array(success => false, error => "Could not locate any keys for that PIN.");
 		echo json_encode($array, JSON_PRETTY_PRINT);
