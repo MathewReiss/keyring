@@ -69,7 +69,7 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header"><font size="+1">Weather</font></div>
+      <div class="item-container-header"><font size="+1"><strong>Weather</strong></font></div>
     </div>
 
     <div class="item-container">
@@ -106,7 +106,7 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header"><font size="+1">Web Services</font></div>
+      <div class="item-container-header"><font size="+1"><strong>Web Services</strong></font></div>
     </div>
 
     <div class="item-container">
@@ -132,7 +132,7 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header"><font size="+1">Pebble</font></div>
+      <div class="item-container-header"><font size="+1"><strong>Pebble</strong></font></div>
     </div>
 
     <div class="item-container">
