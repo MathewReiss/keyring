@@ -60,19 +60,3 @@
 	}
 	$conn->close();
 ?>
-
-
-/*
-		foreach($weather_indices as $key){}
-
-		$array = [];
-
-		foreach($indices as $key){
-			$array += array($key => $result[$key]);
-			unset($result[$key]);
-		}
-
-		$array = array(keys => $array);
-
-		$result = $result + $array;
-*/
