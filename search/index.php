@@ -52,11 +52,11 @@
 		header("Access-Control-Allow-Origin: *");
 		header("Access-Control-Allow-Methods: *");
 		header("Content-type: application/json");
-		echo json_encode($result, JSON_PRETTY_PRINT);
+		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 	else{
-		$result = array(success => false, error => "Could not locate any keys for that PIN.");
-		echo json_encode($result, JSON_PRETTY_PRINT);
+		$array = array(success => false, error => "Could not locate any keys for that PIN.");
+		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 	$conn->close();
 ?>
