@@ -69,11 +69,15 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header">IFTTT Maker Channel</div>
+      <div class="item-container-header"><font size="+1">Weather</font></div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Open Weather Map</div>
       <div class="item-container-content">
         <label class="item">
           <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="ifttt" name="ifttt" value="<?php echo $ifttt?>">
+            <input type="text" class="item-input" id="owm" name="owm" value="<?php echo $owm?>">
           </div>
         </label>
       </div>
@@ -102,6 +106,21 @@
     </div>
 
     <div class="item-container">
+      <div class="item-container-header"><font size="+1">Web Services</font></div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">IFTTT Maker Channel</div>
+      <div class="item-container-content">
+        <label class="item">
+          <div class="item-input-wrapper">
+            <input type="text" class="item-input" id="ifttt" name="ifttt" value="<?php echo $ifttt?>">
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="item-container">
       <div class="item-container-header">Wolfram Alpha</div>
       <div class="item-container-content">
         <label class="item">
@@ -113,11 +132,26 @@
     </div>
 
     <div class="item-container">
+      <div class="item-container-header"><font size="+1">Pebble</font></div>
+    </div>
+
+    <div class="item-container">
       <div class="item-container-header">My Habits</div>
       <div class="item-container-content">
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="habits" name="habits" value="<?php echo $habits?>">
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Travel/Departure</div>
+      <div class="item-container-content">
+        <label class="item">
+          <div class="item-input-wrapper">
+            <input type="text" class="item-input" id="travel" name="travel" value="<?php echo $travel?>">
           </div>
         </label>
       </div>
@@ -153,7 +187,7 @@
         'habits' : document.getElementById("habits").value
       };
 
-      var return_to = '/insert.php?pin=' + <?php echo $pin ?>  + '&token=<?php echo $_GET[token]?>&ifttt=' + options.ifttt + '&wu=' + options.wu + '&forecast=' + options.forecast + '&wolfram=' + options.wolfram + '&habits=' + options.habits;//getQueryParams('return_to', 'pebblejs://close#');
+      var return_to = '/insert/?pin=' + <?php echo $pin ?>  + '&token=<?php echo $_GET[token]?>&ifttt=' + options.ifttt + '&wu=' + options.wu + '&forecast=' + options.forecast + '&wolfram=' + options.wolfram + '&habits=' + options.habits;//getQueryParams('return_to', 'pebblejs://close#');
       
       document.location = return_to;
     }
