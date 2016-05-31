@@ -4,193 +4,23 @@
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
   
-  <title>Master Key Settings</title>
+  <title>Pebble Master Key</title>
   <link rel="stylesheet" href="https://dl.dropboxusercontent.com/s/9vzn6jmlvzogvi1/slate.css">
   <script type="text/javascript" src="https://dl.dropboxusercontent.com/s/zyba8qboh5czip8/slate.js"></script>
 </head>
 <body>
-  <form id="main-form" action="insert.php" method="get">
-
-    <div class="item-container">
-      <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
-      <div class="item-container-footer"><font size="+1">
-  
-        <?php
-          $servername = "$_ENV[DB_SERVERNAME]";
-          $username = "$_ENV[DB_USER]";
-          $password = "$_ENV[DB_PASSWORD]";
-
-          $conn = new mysqli($servername, $username, $password);
-
-          if($conn->connect_error){
-            die("Connection failed: " . $conn->connect_error);
-            echo "Error retrieving PIN Code... (Err 1)";
-          }
-
-          $token = $_GET['token'];
-
-          date_default_timezone_set('UTC');
-          $date = date('Y-m-d H:i:s', time());
-
-          $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.token LIKE '$token';";
-          $result = $conn->query($sql);
-
-          if($result->num_rows == 0){
-            $sql = "INSERT INTO heroku_f8bdd97336b1c2f.keyring (token, lastUpdated) VALUES ('$token', '$date');";
-            $result = $conn->query($sql);
-
-            if(!$result){
-              echo "Error retrieving PIN Code... (Err 2)";
-              return;
-            }
-
-            $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.token LIKE '$token';";
-            $result = $conn->query($sql);
-
-            if(!$result){
-              echo "Error retrieving PIN Code... (Err 3)";
-              return;
-            }            
-          }
-
-          $result = $result->fetch_assoc();
-          $pin = 10000 + $result['id'];
-
-          $ifttt = $result['ifttt'];
-          $wu = $result['wu'];
-          $forecast = $result['forecast'];
-          $wolfram = $result['wolfram'];
-          $habits = $result['habits'];
-
-          echo "Your PIN Code is: <strong>$pin</strong>";
-        ?>
-
-      </font></div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header"><font size="+1"><strong>Weather</strong></font></div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">Open Weather Map</div>
+  <div class="item-container">
+      <div class="item-container-header">Pebble Master Key</div>
       <div class="item-container-content">
         <label class="item">
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="owm" name="owm" value="<?php echo $owm?>">
+          Pebble Master Key is a new serive for Pebble users. Get a unique PIN and add API Keys for your favorite online services. Then, enter your PIN the Settings page of any <a href="" target="_blank">Master Key-enabled watchface or app</a>, and that's it! No more annoying copy/paste from your phone browser. No more exhaustingly long alphanumeric codes to enter on a tiny keyboard. Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
+    
+          <div class="item-input-wrapper item-input-wrapper-button">
+            <input type="number" class="item-input" id="pin" name="pin">
           </div>
+          <input type="button" class="item-button item-input-button" id="pin-button" name="pin-button" value="SIGN IN">
         </label>
       </div>
     </div>
-
-    <div class="item-container">
-      <div class="item-container-header">Weather Underground</div>
-      <div class="item-container-content">
-        <label class="item">
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="wu" name="wu" value="<?php echo $wu?>">
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">ForecastIO</div>
-      <div class="item-container-content">
-        <label class="item">
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="forecast" name="forecast" value="<?php echo $forecast?>">
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header"><font size="+1"><strong>Web Services</strong></font></div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">IFTTT Maker Channel</div>
-      <div class="item-container-content">
-        <label class="item">
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="ifttt" name="ifttt" value="<?php echo $ifttt?>">
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">Wolfram Alpha</div>
-      <div class="item-container-content">
-        <label class="item">
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="wolfram" name="wolfram" value="<?php echo $wolfram?>">
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header"><font size="+1"><strong>Pebble</strong></font></div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">My Habits</div>
-      <div class="item-container-content">
-        <label class="item">
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="habits" name="habits" value="<?php echo $habits?>">
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">Travel/Departure</div>
-      <div class="item-container-content">
-        <label class="item">
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="travel" name="travel" value="<?php echo $travel?>">
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item-container">
-      <div class="button-container">
-        <input type="button" class="item-button" value="SAVE KEYS" onclick="save()">
-      </div>
-    </div>
-
-  </form>
-
-  <script>
-    function getQueryParams(variable, default_){
-      var query = location.search.substring(1);
-      var vars = query.split('&');
-
-      for(var i = 0; i < vars.length; i++){
-        var pair = vars[i].split('=');
-
-        if(pair[0] == variable) return decodeURIComponent(pair[1]);
-      }
-      return default_ || false;
-    }
-
-    function save(){
-      var options = {
-        'ifttt' : document.getElementById("ifttt").value,
-        'wu' : document.getElementById("wu").value,
-        'forecast' : document.getElementById("forecast").value,
-        'wolfram' : document.getElementById("wolfram").value,
-        'habits' : document.getElementById("habits").value
-      };
-
-      var return_to = '/insert/?pin=' + <?php echo $pin ?>  + '&token=<?php echo $_GET[token]?>&ifttt=' + options.ifttt + '&wu=' + options.wu + '&forecast=' + options.forecast + '&wolfram=' + options.wolfram + '&habits=' + options.habits;//getQueryParams('return_to', 'pebblejs://close#');
-      
-      document.location = return_to;
-    }
-  </script>
 </body>
 </html>
