@@ -31,8 +31,11 @@
 
     <div class="item-container">
       <div class="item-container-header">Spread the word!</div>
-      <div class="item-container-content">
+      <div class="item-container-content" style="height: 200px; width: 400px; overflow: hidden;">
         <label class="item">
+          <img src="socialmedia.jpg" />
+          <br /><br /><br />
+          <img src="socialmedia.jpg" width="300" height="150" style="margin-left:-50px;"/>
         </label>
       </div>
     </div>
