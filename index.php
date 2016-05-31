@@ -18,12 +18,12 @@
         </label>
           <label class="item">
            <div class="item-input-wrapper item-input-wrapper-button">
-             <input type="number" class="item-input" id="pin" name="pin" placeholder="5-Digit PIN">
+             <input type="number" class="item-input" id="pin" name="pin" placeholder="5-digit PIN">
            </div>
            <input type="button" class="item-button item-input-button" id="pin-button" name="pin-button" value="SIGN IN">
           </label>
         <label class="item">
-          <center>Don't have a PIN? That's ok. <a href="/update">Click here</a> to sign up for one.</center>
+          <center>Don't have a PIN? <a href="/update">Click here</a> to sign up for one.</center>
         </label>
       </div>
       <div class="item-container-footer">Are you a Developer interested in integrating Master Key into your Pebble watchface or app? <a href="/developer">Click here</a> for Master Key Documentation and Example Implementations.</div>
