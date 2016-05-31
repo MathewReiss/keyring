@@ -31,9 +31,9 @@
 
     <div class="item-container">
       <div class="item-container-header">Spread the word!</div>
-      <div class="item-container-content">
+      <div class="item-container-footer">
         <label class="item">
-          <a href="https://twitter.com/intent/tweet?button_hashtag=MasterKey" class="twitter-hashtag-button" data-related="Pebble" data-url="www.pmkey.xyz">Tweet #MasterKey</a>
+          <a href="https://twitter.com/intent/tweet?button_hashtag=MasterKey&text=Check%20out%20%23MasterKey%20for%20%40Pebble%20-%20makes%20life%20so%20much%20easier!!!" class="twitter-hashtag-button" data-related="Pebble" data-url="www.pmkey.xyz">Tweet #MasterKey</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </label>
       </div>
