@@ -31,11 +31,10 @@
 
     <div class="item-container">
       <div class="item-container-header">Spread the word!</div>
-      <div class="item-container-content" style="height: 200px; width: 400px; overflow: hidden;">
+      <div class="item-container-content">
         <label class="item">
-          <img src="/socialmedia.jpg" />
-          <br /><br /><br />
-          <img src="/socialmedia.jpg" width="300" height="150" style="margin-left:-50px;"/>
+          <a href="https://twitter.com/intent/tweet?button_hashtag=MasterKey" class="twitter-hashtag-button" data-related="Pebble" data-url="www.pmkey.xyz">Tweet #MasterKey</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </label>
       </div>
     </div>
