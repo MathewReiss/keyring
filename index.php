@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
   
-  <title>Pebble Master Key</title>
+  <title>Master Key</title>
   <link rel="stylesheet" href="/dist/css/slate.min.css">
   <link rel="icon" type="image/png" href="/favicon2.png">
   <script type="text/javascript" src="/dist/js/slate.min.js"></script>
