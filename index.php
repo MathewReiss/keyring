@@ -5,9 +5,9 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
   
   <title>Pebble Master Key</title>
-  <link rel="stylesheet" href="https://dl.dropboxusercontent.com/s/9vzn6jmlvzogvi1/slate.css">
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/pebble/slate/master/dist/css/slate.min.css">
   <link rel="icon" type="image/png" href="/favicon2.png">
-  <script type="text/javascript" src="https://dl.dropboxusercontent.com/s/zyba8qboh5czip8/slate.js"></script>
+  <script type="text/javascript" src="https://raw.githubusercontent.com/pebble/slate/master/dist/js/slate.min.js"></script>
 </head>
 <body>
   <div class="item-container">
