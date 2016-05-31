@@ -21,7 +21,9 @@
            </div>
            <input type="button" class="item-button item-input-button" id="pin-button" name="pin-button" value="SIGN IN">
           </label>
-        
+        <label class="item">
+          <center>Don't have a PIN? That's ok. <a href="">Click here</a> to receive a PIN.</center>
+        </label>
       </div>
     </div>
 </body>
