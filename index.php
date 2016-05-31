@@ -29,7 +29,7 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header">Share</div>
+      <div class="item-container-header">Spread the word!</div>
       <div class="item-container-content">
         <label class="item">
         </label>
