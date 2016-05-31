@@ -26,5 +26,12 @@
         </label>
       </div>
     </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Share</div>
+      <div class="item-container-content">
+        SOCIAL MEDIA ICONZ GO HEAR
+      </div>
+    </div>
 </body>
 </html>
