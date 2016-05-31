@@ -30,7 +30,6 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header">Spread the word!</div>
       <div class="item-container-footer">
         <label class="item">
           <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.pmkey.xyz" data-text="Check out #MasterKey for @Pebble! Makes life so much easier." data-size="large">Tweet #MasterKey</a>
