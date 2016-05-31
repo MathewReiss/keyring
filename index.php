@@ -6,7 +6,7 @@
   
   <title>Pebble Master Key</title>
   <link rel="stylesheet" href="https://dl.dropboxusercontent.com/s/9vzn6jmlvzogvi1/slate.css">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/favicon2.png">
   <script type="text/javascript" src="https://dl.dropboxusercontent.com/s/zyba8qboh5czip8/slate.js"></script>
 </head>
 <body>
@@ -33,9 +33,9 @@
       <div class="item-container-header">Spread the word!</div>
       <div class="item-container-content" style="height: 200px; width: 400px; overflow: hidden;">
         <label class="item">
-          <img src="socialmedia.jpg" />
+          <img src="/socialmedia.jpg" />
           <br /><br /><br />
-          <img src="socialmedia.jpg" width="300" height="150" style="margin-left:-50px;"/>
+          <img src="/socialmedia.jpg" width="300" height="150" style="margin-left:-50px;"/>
         </label>
       </div>
     </div>
