@@ -13,7 +13,7 @@
       <div class="item-container-header">Pebble Master Key</div>
       <div class="item-container-content">
         <label class="item">
-          Pebble Master Key is a new service for Pebble users. Get a unique PIN and add API Keys for your favorite online services. Then, enter your PIN the Settings page of any <a href="" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br />No more annoying copy/paste from your phone browser. No more exhaustingly long alphanumeric codes to enter on a tiny keyboard. Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
+          Pebble Master Key is a new service for Pebble users. Get a unique PIN and add API Keys for your favorite online services.<br />Then, enter your PIN the Settings page of any <a href="" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br /><em>No more annoying copy/paste from your phone browser.<br /><br />No more exhaustingly long alphanumeric codes to enter on a tiny keyboard.</em><br /><br />Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
         </label>
           <label class="item">
            <div class="item-input-wrapper item-input-wrapper-button">
