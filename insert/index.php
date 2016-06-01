@@ -28,19 +28,19 @@
 		exit;
     }
 
-    $pin = $_POST['pin'];
-    $id = $_POST['id'];
-    $date = $_POST['date'];
+    $pin = $_REQUEST['pin'];
+    $id = $_REQUEST['id'];
+    $date = $_REQUEST['date'];
 
-    $owm = $_POST['owm'];
-    $wu = $_POST['wu'];
-    $forecast = $_POST['forecast'];
+    $owm = $_REQUEST['owm'];
+    $wu = $_REQUEST['wu'];
+    $forecast = $_REQUEST['forecast'];
 
-    $ifttt = $_POST['ifttt'];
-    $wolfram = $_POST['wolfram'];
+    $ifttt = $_REQUEST['ifttt'];
+    $wolfram = $_REQUEST['wolfram'];
 
-    $habits = $_POST['habits'];
-    $travel = $_POST['wolfram'];
+    $habits = $_REQUEST['habits'];
+    $travel = $_REQUEST['wolfram'];
 
     //New PIN
     if(!is_null($id)){
@@ -58,6 +58,6 @@
         echo json_encode(array(success => true));    
     }
     else{
-        echo json_encode(array(success => false, sql => $sql, post => $_POST, error => "No rows affected"));
+        echo json_encode(array(success => false, sql => $sql, request => $_REQUEST, error => "No rows affected"));
     }	  
 ?>
