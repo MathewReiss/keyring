@@ -13,7 +13,7 @@
     */
 
     header("Access-Control-Allow-Origin: https://pmkey.xyz");
-	header("Access-Control-Allow-Methods: OPTIONS, POST");
+	header("Access-Control-Allow-Methods: OPTIONS, POST, GET");
     header("Access-Control-Allow-Headers: Content-Type");
 
     if($_SERVER['REQUEST_METHOD'] == 'OPTIONS'){
@@ -49,7 +49,7 @@
 
     //New PIN
     if(!is_null($id)){
-        //$sql = "UPDATE TABLE '$tablename' SET pin='$pin' WHERE id=$id;";
+        $pin = bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
     	$sql = "UPDATE $tablename SET pin='$pin', lastUpdated='$date', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE id=$id;";
     }
     //Existing PIN

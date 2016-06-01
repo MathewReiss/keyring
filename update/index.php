@@ -195,8 +195,9 @@
     function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
-      xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
+      url += "?pin=<?php echo $pin?>&id=<?php echo $id?>&date=<?php echo $date?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&travel=" + document.getElementById("travel").value;
+      xhr.open("GET", url, true);
+      //xhr.setRequestHeader("Content-Type", "application/json");
 
       var keys = {
         'pin' : <?php echo $pin?>,
@@ -229,7 +230,7 @@
         }
       };
 
-      xhr.send(encodeURIComponent(JSON.stringify(keys)));
+      xhr.send();
     }
   </script>
 </body>
