@@ -48,7 +48,7 @@
       var pin = document.getElementById("pin").value;
 
       if(pin === null || isNaN(pin) || pin < 10000 || pin > 99999){
-        alert("I\u0332n\u0332v\u0332a\u0332l\u0332i\u0332d\u0332 P\u0332I\u0332N\u0332\n\nPlease enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
+        alert("I\u0332n\u0332v\u0332a\u0332l\u0332i\u0332d\u0332-\u0332P\u0332I\u0332N\u0332\n\nPlease enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
       }
       else{
         localStorage.setItem("savedPin", pin);
