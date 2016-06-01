@@ -117,6 +117,8 @@
       <div class="item-container-header"><font size="+1"><strong>Web Services</strong></font></div>
     </div>
 
+    <hr/>
+
     <div class="item-container">
       <div class="item-container-header">IFTTT Maker Channel</div>
       <div class="item-container-content">
@@ -141,9 +143,13 @@
       </div>
     </div>
 
+    <hr/>
+
     <div class="item-container">
       <div class="item-container-header"><font size="+1"><strong>Pebble</strong></font></div>
     </div>
+
+    <hr/>
 
     <div class="item-container">
       <div class="item-container-header">My Habits</div>
