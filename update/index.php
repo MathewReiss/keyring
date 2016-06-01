@@ -209,7 +209,7 @@
 
       document.getElementById("save-button").value = "SAVING...";
 
-      xhr.onreadystatechange(function(){
+      xhr.onreadystatechange = function(){
         if(xhr.readyState === 4 && xhr.status === 200){
           document.getElementById("save-button").value = "SAVE KEYS";
 
@@ -222,7 +222,7 @@
             alert("E\u0332r\u0332r\u0332o\u0332r\u0332\n\nFor some reason, your API keys were not saved. Please contact support if this issue persists");
           }
         }
-      });
+      };
 
       xhr.send(encodeURIComponent(JSON.stringify(keys)));
     }
