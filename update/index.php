@@ -160,14 +160,14 @@
 
     <div class="item-container">
       <div class="button-container">
-        <input type="button" class="item-button" value="SAVE KEYS" id="save-button" onclick="save()">
+        <input type="button" class="item-button" value="SAVE KEYS" id="save-button" onclick="saveKeys()">
       </div>
     </div>
 
   <!--</form>-->
 
   <script>
-    function save(){
+    function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = document.location.split("?")[0] + "/insert/index.php";
       xhr.open("POST", url, false);
