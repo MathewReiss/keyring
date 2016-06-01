@@ -21,43 +21,36 @@
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
 
-          $conn = new mysqli($servername, $username, $password);
+          $mysqli = new mysqli($servername, $username, $password);
 
-          if($conn->connect_error){
+          if($mysqli->connect_error){
             die("Connection failed: " . $conn->connect_error);
             echo "Error retrieving PIN Code... (Err 1)";
           }
 
-          $pin = $_GET['pin'];
+          if(isset($_GET['pin'])){
+            $pin = $_GET['pin'];
 
-          date_default_timezone_set('UTC');
-          $date = date('Y-m-d H:i:s', time());
+            date_default_timezone_set('UTC');
+            $date = date('Y-m-d H:i:s', time());
 
-          $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.pin LIKE '$pin';";
-          $result = $conn->query($sql);
-
-          //If PIN does not exist, insert empty row with lastUpdated value, retrieve last-inserted row #, then generate PIN from row #
-          if($result->num_rows == 0){
-            $sql = "INSERT INTO heroku_f8bdd97336b1c2f.keyring (pin, lastUpdated) VALUES ('$pin', '$date');";
-            $result = $conn->query($sql);
-
-            if(!$result){
+            $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.pin LIKE '$pin';";
+            $result = $mysqli->query($sql);
+            
+            if($result->num_rows == 0){
               echo "Error retrieving PIN Code... (Err 2)";
-              return;
             }
-
-            $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.token LIKE '$token';";
-            $result = $conn->query($sql);
-
-            if(!$result){
-              echo "Error retrieving PIN Code... (Err 3)";
-              return;
-            }            
+            else{
+              $result = $result->fetch_assoc();
+              $pin = $result['pin'];
+            }
           }
+          else{
+            $sql = "INSERT INTO heroku_f8bdd97336b1c2f.keyring (lastUpdated) VALUES ('$date');";
+            $result = $mysqli->query($sql);
 
-          $result = $result->fetch_assoc();
-          $pin = 10000 + $result['id'];
-
+            $pin = bindec(strrev(str_pad(decbin($mysqli->insert_id), 16, '0', STR_PAD_LEFT))) + 10000;
+          }
           
           $wu = $result['wu'];
           $owm = $result['owm'];
@@ -181,6 +174,7 @@
 
       var keys = {
         'pin' : <?php echo $pin?>,
+        'date' : <?php echo $date?>,
         'owm' : document.getElementById("owm").value,
         'wu' : document.getElementById("wu").value,
         'forecast' : document.getElementById("forecast").value,
