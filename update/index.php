@@ -32,9 +32,6 @@
           if(isset($_GET['pin'])){
             $pin = $_GET['pin'];
 
-            date_default_timezone_set('UTC');
-            $date = date('Y-m-d H:i:s', time());
-
             $sql = "SELECT * FROM $tablename AS kr WHERE kr.pin LIKE '$pin';";
             $result = $mysqli->query($sql);
             
@@ -47,6 +44,9 @@
             }
           }
           else{
+            date_default_timezone_set('UTC');
+            $date = date('Y-m-d H:i:s', time());
+
             $sql = "INSERT INTO $tablename (lastUpdated) VALUES ('$date');";
             $result = $mysqli->query($sql);
 
