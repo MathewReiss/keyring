@@ -1,4 +1,5 @@
 <?php
+    /*
     // respond to preflights
     if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     // return only the headers and not the content
@@ -14,6 +15,12 @@
 	header("Access-Control-Allow-Origin: https://pmkey.xyz");
 	header("Access-Control-Allow-Methods: POST");
 	header("Content-Type: application/json");
+*/
+
+    header("Access-Control-Allow-Headers: *");
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: *");
+    header("Content-Type: application/json");
 
 	$servername = "$_ENV[DB_SERVERNAME]";
     $username = "$_ENV[DB_USER]";
@@ -28,19 +35,19 @@
 		exit;
     }
 
-    $pin = $_REQUEST['pin'];
-    $id = $_REQUEST['id'];
-    $date = $_REQUEST['date'];
+    $pin = $_POST['pin'];
+    $id = $_POST['id'];
+    $date = $_POST['date'];
 
-    $owm = $_REQUEST['owm'];
-    $wu = $_REQUEST['wu'];
-    $forecast = $_REQUEST['forecast'];
+    $owm = $_POST['owm'];
+    $wu = $_POST['wu'];
+    $forecast = $_POST['forecast'];
 
-    $ifttt = $_REQUEST['ifttt'];
-    $wolfram = $_REQUEST['wolfram'];
+    $ifttt = $_POST['ifttt'];
+    $wolfram = $_POST['wolfram'];
 
-    $habits = $_REQUEST['habits'];
-    $travel = $_REQUEST['wolfram'];
+    $habits = $_POST['habits'];
+    $travel = $_POST['wolfram'];
 
     //New PIN
     if(!is_null($id)){
@@ -58,6 +65,6 @@
         echo json_encode(array(success => true));    
     }
     else{
-        echo json_encode(array(success => false, sql => $sql, request => $_REQUEST, error => "No rows affected"));
+        echo json_encode(array(success => false, sql => $sql, post => $_POST, error => "No rows affected"));
     }	  
 ?>
