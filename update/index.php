@@ -73,6 +73,8 @@
       <div class="item-container-header"><font size="+1"><strong>Weather</strong></font></div>
     </div>
 
+    <hr/>
+
     <div class="item-container">
       <div class="item-container-header">Open Weather Map</div>
       <div class="item-container-content">
@@ -108,6 +110,8 @@
         </label>
       </div>
     </div>
+
+    <hr/>
 
     <div class="item-container">
       <div class="item-container-header"><font size="+1"><strong>Web Services</strong></font></div>
@@ -164,6 +168,8 @@
         </label>
       </div>
     </div>
+
+    <hr/>
 
     <div class="item-container">
       <div class="button-container">
