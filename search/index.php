@@ -9,19 +9,29 @@
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
+	    header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Methods: *");
+		header("Content-type: application/json");
 	    echo json_encode(array(success => false) + array(error => "Could not connect to Pebble Master Key Database."), JSON_PRETTY_PRINT);
 	}
 
-	$pin = $_GET['pin'] - 10000;
+	if(isset($_GET['pin'])) $pin = $_GET['pin'];
+	else{
+		$array = array(success => false, error => "You must provide a PIN as a URL parameter (pin).");
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Methods: *");
+		header("Content-type: application/json");
+		echo json_encode($array, JSON_PRETTY_PRINT);
+	}
 
-	$sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring as kr WHERE kr.id LIKE '$pin';";
+	$sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring as kr WHERE kr.pin LIKE '$pin';";
 	$result = $conn->query($sql);			
 
 	if($result->num_rows == 1){
 		$result = $result->fetch_assoc();
-		unset($result['token']);
-		unset($result['id']);
-		$result = array(pin => $_GET['pin']*1) + array(success => true) + $result;
+		//unset($result['token']);
+		//unset($result['id']);
+		//$result = array(pin => $_GET['pin']*1) + array(success => true) + $result;
 
 		$weather_indices = [owm, wu, forecast];
 		$web_indices = [ifttt, wolfram];
@@ -30,24 +40,24 @@
 		$weather = [];
 		foreach($weather_indices as $key){
 			$weather += array($key => $result[$key]);
-			unset($result[$key]);
+			//unset($result[$key]);
 		}
 
 		$web = [];
 		foreach($web_indices as $key){
 			$web += array($key => $result[$key]);
-			unset($result[$key]);
+			//unset($result[$key]);
 		}
 
 		$pebble = [];
 		foreach($pebble_indices as $key){
 			$pebble += array($key => $result[$key]);
-			unset($result[$key]);
+			//unset($result[$key]);
 		}
 
 		$keys = array(weather => $weather, web => $web, pebble => $pebble);
 
-		$array = array(success => true, lastUpdated => '2016-05-27 12:34:00', keys => $keys);
+		$array = array(success => true, lastUpdated => $result['lastUpdated'], keys => $keys);
 
 		header("Access-Control-Allow-Origin: *");
 		header("Access-Control-Allow-Methods: *");
