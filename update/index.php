@@ -219,7 +219,7 @@
           document.getElementById("save-button").value = "SAVE KEYS";
 
           var result = JSON.parse(xhr.responseText);
-
+          console.log(JSON.stringify(result));
           if(result.success){
             alert("Keys saved!");
           }
