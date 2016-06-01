@@ -27,8 +27,11 @@
     if($mysqli->connect_error){
     	//die("Connection failed: " . $conn->connect_error);
 		echo json_encode(array(success => false));
+        echo "what is going on 2";
 		exit;
     }
+
+    echo "what is going on 3";
 
     $pin = $_POST['pin'];
     $id = $_POST['id'];
@@ -73,7 +76,13 @@
     			WHERE pin=$pin;";
     }
 
+    echo "what is going on 4";
+
     $result = $mysql->query($sql);
 
-	echo json_encode(array(success => true));    
+    echo "what is going on 5";
+
+	echo json_encode(array(success => true));  
+
+    echo "what is going on 6";  
 ?>
