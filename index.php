@@ -52,6 +52,7 @@
       }
       else{
         localStorage.setItem("savedPin", pin);
+        console.log("Pin Saved: " + pin);
       }
     }
   </script>
