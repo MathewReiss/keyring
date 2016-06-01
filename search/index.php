@@ -71,8 +71,15 @@
 		header("Content-type: application/json");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
-	else{
+	else if($result->num_rows == 0){
 		$array = array(success => false, error => "Could not locate any keys for that PIN.");
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Methods: *");
+		header("Content-type: application/json");
+		echo json_encode($array, JSON_PRETTY_PRINT);
+	}
+	else{
+		$array = array(success => false, error => "Unknown error. Please contact support.");
 		header("Access-Control-Allow-Origin: *");
 		header("Access-Control-Allow-Methods: *");
 		header("Content-type: application/json");

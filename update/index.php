@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
   
-  <title>Master Key</title>
+  <title>Pebble Master Key</title>
   <link rel="stylesheet" href="/dist/css/slate.min.css">
   <link rel="icon" type="image/png" href="/favicon2.png">
   <script type="text/javascript" src="/dist/js/slate.min.js"></script>
 </head>
 <body>
-  <form id="main-form" action="insert.php" method="get">
+  <!--<form id="main-form" action="insert.php" method="post">-->
 
     <div class="item-container">
       <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
@@ -28,16 +28,17 @@
             echo "Error retrieving PIN Code... (Err 1)";
           }
 
-          $token = $_GET['token'];
+          $pin = $_GET['pin'];
 
           date_default_timezone_set('UTC');
           $date = date('Y-m-d H:i:s', time());
 
-          $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.token LIKE '$token';";
+          $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.pin LIKE '$pin';";
           $result = $conn->query($sql);
 
+          //If PIN does not exist, insert empty row with lastUpdated value, retrieve last-inserted row #, then generate PIN from row #
           if($result->num_rows == 0){
-            $sql = "INSERT INTO heroku_f8bdd97336b1c2f.keyring (token, lastUpdated) VALUES ('$token', '$date');";
+            $sql = "INSERT INTO heroku_f8bdd97336b1c2f.keyring (pin, lastUpdated) VALUES ('$pin', '$date');";
             $result = $conn->query($sql);
 
             if(!$result){
@@ -57,11 +58,16 @@
           $result = $result->fetch_assoc();
           $pin = 10000 + $result['id'];
 
-          $ifttt = $result['ifttt'];
+          
           $wu = $result['wu'];
+          $owm = $result['owm'];
           $forecast = $result['forecast'];
+
+          $ifttt = $result['ifttt'];
           $wolfram = $result['wolfram'];
+
           $habits = $result['habits'];
+          $travel = $travel['travel'];
 
           echo "Your PIN Code is: <strong>$pin</strong>";
         ?>
@@ -160,10 +166,45 @@
 
     <div class="item-container">
       <div class="button-container">
-        <input type="button" class="item-button" value="SAVE KEYS" onclick="save()">
+        <input type="button" class="item-button" value="SAVE KEYS" id="save-button" onclick="save()">
       </div>
     </div>
 
-  </form>
+  <!--</form>-->
+
+  <script>
+    function save(){
+      var xhr = new XMLHttpRequest();
+      var url = document.location.split("?")[0] + "/insert/index.php";
+      xhr.open("POST", url, false);
+      xhr.setRequestHeader("Content-type", "application/json");
+
+      var keys = {
+        'pin' : <?php echo $pin?>,
+        'owm' : document.getElementById("owm").value,
+        'wu' : document.getElementById("wu").value,
+        'forecast' : document.getElementById("forecast").value,
+        'ifttt' : document.getElementById("ifttt").value,
+        'wolfram' : document.getElementById("wolfram").value,
+        'habits' : document.getElementById("habits").value,
+        'travel' : document.getElementById("travel").value
+      };
+
+      document.getElementById("save-button").value = "SAVING...";
+
+      xhr.send(encodeURIComponent(JSON.stringify(keys)));
+
+      document.getElementById("save-button").value = "SAVE KEYS";
+
+      var result = JSON.parse(xhr.responseText);
+
+      if(result.success){
+        alert("Keys saved!");
+      }
+      else{
+        alert("E\u0332r\u0332r\u0332o\u0332r\u0332\n\nFor some reason, your API keys were not saved. Please contact support if this issue persists");
+      }
+    }
+  </script>
 </body>
 </html>
