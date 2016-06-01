@@ -44,7 +44,7 @@
       var pin = document.getElementById("pin").value;
 
       if(pin < 10000 || pin > 99999){
-        alert("Invalid PIN");
+        alert("Invalid PIN", "Please enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
       }
       else{
         console.log("Success!");
