@@ -45,11 +45,11 @@
     //New PIN
     if(!is_null($id)){
         //$sql = "UPDATE TABLE '$tablename' SET pin='$pin' WHERE id=$id;";
-    	$sql = "UPDATE TABLE '$tablename' SET pin='$pin', lastUpdated='$date', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE id=$id;";
+    	$sql = "UPDATE $tablename SET pin='$pin', lastUpdated='$date', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE id=$id;";
     }
     //Existing PIN
     else{
-    	$sql = "UPDATE TABLE '$tablename' SET 
+    	$sql = "UPDATE $tablename SET 
     				lastUpdated='$date',
     				owm='$owm', 
     				wu='$wu', 
