@@ -191,8 +191,8 @@
   <script>
     function saveKeys(){
       var xhr = new XMLHttpRequest();
-      var url = document.location.href.split("?")[0] + "/insert/index.php";
-      xhr.open("POST", url, false);
+      var url = document.location.href.split("?")[0] + "insert/index.php";
+      xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-type", "application/json");
 
       var keys = {
@@ -209,18 +209,22 @@
 
       document.getElementById("save-button").value = "SAVING...";
 
+      xhr.onreadystatechange(function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+          document.getElementById("save-button").value = "SAVE KEYS";
+
+          var result = JSON.parse(xhr.responseText);
+
+          if(result.success){
+            alert("Keys saved!");
+          }
+          else{
+            alert("E\u0332r\u0332r\u0332o\u0332r\u0332\n\nFor some reason, your API keys were not saved. Please contact support if this issue persists");
+          }
+        }
+      });
+
       xhr.send(encodeURIComponent(JSON.stringify(keys)));
-
-      document.getElementById("save-button").value = "SAVE KEYS";
-
-      var result = JSON.parse(xhr.responseText);
-
-      if(result.success){
-        alert("Keys saved!");
-      }
-      else{
-        alert("E\u0332r\u0332r\u0332o\u0332r\u0332\n\nFor some reason, your API keys were not saved. Please contact support if this issue persists");
-      }
     }
   </script>
 </body>
