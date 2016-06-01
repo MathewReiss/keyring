@@ -26,7 +26,7 @@
     $wolfram = $_GET['wolfram'];
 
     $habits = $_GET['habits'];
-    $travel = $_GET['wolfram'];
+    $travel = $_GET['travel'];
 
     //New PIN
     if(!is_null($id)){
