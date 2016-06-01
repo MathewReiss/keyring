@@ -52,6 +52,8 @@
       }
       else{
         localStorage.setItem("savedPin", pin);
+
+        document.location = document.location + "/update?pin=" + pin;
       }
     }
   </script>
