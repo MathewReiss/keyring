@@ -11,8 +11,8 @@
 
     $mysqli = new mysqli($servername, $username, $password);
 
-    if(true || $mysqli->connect_error){
-    	die("Connection failed: " . $conn->connect_error);
+    if($mysqli->connect_error){
+    	//die("Connection failed: " . $conn->connect_error);
 		echo json_encode(array(success => false));
 		exit;
     }
