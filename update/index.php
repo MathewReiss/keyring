@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="/favicon2.png">
   <script type="text/javascript" src="/dist/js/slate.min.js"></script>
 </head>
-<body>
+<body style="margin-left: 10%; margin-right: 10%;">
   <!--<form id="main-form" action="insert.php" method="post">-->
 
     <div class="item-container">
