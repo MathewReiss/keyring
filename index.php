@@ -47,7 +47,7 @@
         alert("Invalid PIN");
       }
       else{
-        
+        console.log("Success!");
       }
     }
   </script>
