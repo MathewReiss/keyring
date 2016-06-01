@@ -10,7 +10,6 @@
   <script type="text/javascript" src="/dist/js/slate.min.js"></script>
 </head>
 <body style="margin-left: 10%; margin-right: 10%;">
-  <!--<form id="main-form" action="insert.php" method="post">-->
 
     <div class="item-container">
       <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
@@ -29,6 +28,9 @@
             echo "Error retrieving PIN Code... (Err 1)";
           }
 
+          date_default_timezone_set('UTC');
+          $date = date('Y-m-d H:i:s', time());
+
           if(isset($_GET['pin'])){
             $pin = $_GET['pin'];
 
@@ -43,12 +45,9 @@
               $pin = $result['pin'];
             }
 
-            $id = null;
+            $id = $result['id'];
           }
           else{
-            date_default_timezone_set('UTC');
-            $date = date('Y-m-d H:i:s', time());
-
             $sql = "INSERT INTO $tablename (lastUpdated) VALUES ('$date');";
             $result = $mysqli->query($sql);
 
@@ -189,28 +188,12 @@
 
     <br/>
 
-  <!--</form>-->
-
   <script>
     function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
       url += "?pin=<?php echo $pin?>&id=<?php echo $id?>&date=<?php echo $date?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&travel=" + document.getElementById("travel").value;
       xhr.open("GET", url, true);
-      //xhr.setRequestHeader("Content-Type", "application/json");
-
-      var keys = {
-        'pin' : <?php echo $pin?>,
-        'id' : <?php echo $id?>,
-        'date' : '<?php echo $date?>',
-        'owm' : document.getElementById("owm").value,
-        'wu' : document.getElementById("wu").value,
-        'forecast' : document.getElementById("forecast").value,
-        'ifttt' : document.getElementById("ifttt").value,
-        'wolfram' : document.getElementById("wolfram").value,
-        'habits' : document.getElementById("habits").value,
-        'travel' : document.getElementById("travel").value
-      };
 
       document.getElementById("save-button").value = "SAVING...";
 
