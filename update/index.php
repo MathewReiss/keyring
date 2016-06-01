@@ -193,7 +193,7 @@
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
       xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.setRequestHeader("Content-Type", "application/json");
 
       var keys = {
         'pin' : <?php echo $pin?>,
