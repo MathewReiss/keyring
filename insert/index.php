@@ -6,7 +6,7 @@
 
     $mysqli = new mysqli($servername, $username, $password);
 
-    if($mysqli->connect_error){
+    if(true || $mysqli->connect_error){
     	die("Connection failed: " . $conn->connect_error);
     	header("Access-Control-Allow-Headers: Content-Type");
 		header("Access-Control-Allow-Origin: https://pmkey.xyz");
