@@ -42,8 +42,6 @@
     $habits = $_POST['habits'];
     $travel = $_POST['wolfram'];
 
-    $sql;
-
     //New PIN
     if(!is_null($_id)){
     	$sql = "UPDATE $tablename SET 
@@ -73,13 +71,7 @@
     			WHERE pin=$pin;";
     }
 
-    echo "what is going on 4";
-
     $result = $mysqli->query($sql);
 
-    echo "what is going on 5";
-
 	echo json_encode(array(success => true));  
-
-    echo "what is going on 6";  
 ?>
