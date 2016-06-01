@@ -42,18 +42,16 @@
     var savedPin = localStorage.getItem("savedPin");
     if(savedPin !== null){
       document.getElementById("pin").value = parseInt(savedPin);
-      console.log(savedPin);
     }
 
     function login(){
       var pin = document.getElementById("pin").value;
 
-      if(pin < 10000 || pin > 99999){
-        alert("Invalid PIN", "Invalid Pin:Please enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
+      if(pin === null || isNaN(pin) || pin < 10000 || pin > 99999){
+        alert("Invalid Pin: Please enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
       }
       else{
         localStorage.setItem("savedPin", pin);
-        console.log("Pin Saved: " + pin);
       }
     }
   </script>
