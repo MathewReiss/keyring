@@ -20,7 +20,13 @@
     header("Access-Control-Allow-Headers: *");
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Methods: *");
-    header("Content-Type: application/json");
+
+    if($_SERVER['REQUEST_METHOD'] != 'OPTIONS'){
+        header("Content-Type: application/json");
+    }
+    else{
+        exit;
+    }
 
 	$servername = "$_ENV[DB_SERVERNAME]";
     $username = "$_ENV[DB_USER]";
