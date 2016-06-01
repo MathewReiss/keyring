@@ -1,24 +1,5 @@
 <?php
-/*
-    // respond to preflights
-    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    // return only the headers and not the content
-    // only allow CORS if we're doing a POST - i.e. no saving for now.
-    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']) && $_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'] == 'POST') {
-        header('Access-Control-Allow-Origin: https://pmkey.xyz');
-        header('Access-Control-Allow-Headers: Content-Type');
-    }
-    exit;
-    }
-    */
-
     header("Access-Control-Allow-Origin: https://pmkey.xyz");
-	header("Access-Control-Allow-Methods: OPTIONS, POST, GET");
-    header("Access-Control-Allow-Headers: Content-Type");
-
-    if($_SERVER['REQUEST_METHOD'] == 'OPTIONS'){
-        exit;
-    }
 
 	$servername = "$_ENV[DB_SERVERNAME]";
     $username = "$_ENV[DB_USER]";
@@ -63,6 +44,6 @@
         echo json_encode(array(success => true));    
     }
     else{
-        echo json_encode(array(success => false, sql => $sql, get => $_GET, error => "No rows affected"));
+        echo json_encode(array(success => false, error => "No rows affected"));
     }	  
 ?>
