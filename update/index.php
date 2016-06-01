@@ -100,7 +100,7 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header">ForecastIO</div>
+      <div class="item-container-header">Forecast IO</div>
       <div class="item-container-content">
         <label class="item">
           To get an API Key for Forecast.io, sign up at <a href="https://developer.forecast.io/register" target="_blank">forecast.io</a>.
@@ -164,7 +164,7 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header">Travel/Departure</div>
+      <div class="item-container-header">Travel/Departure (First Class)</div>
       <div class="item-container-content">
         <label class="item">
           To get an API Key for Travel or Departure, open the Settings page for either in your Pebble Time app.
