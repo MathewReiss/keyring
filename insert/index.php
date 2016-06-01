@@ -24,7 +24,7 @@
 
     if($mysqli->connect_error){
     	//die("Connection failed: " . $conn->connect_error);
-		echo json_encode(array(success => false));
+		echo json_encode(array(success => false, error => "Connection error"));
 		exit;
     }
 
@@ -44,7 +44,7 @@
 
     //New PIN
     if(!is_null($_id)){
-    	$sql = "UPDATE $tablename SET 
+    	$sql = "UPDATE TABLE $tablename SET 
     				pin='$pin', 
     				lastUpdated='$date',
     				owm='$owm', 
@@ -59,7 +59,7 @@
     }
     //Existing PIN
     else{
-    	$sql = "UPDATE $tablename SET 
+    	$sql = "UPDATE TABLE $tablename SET 
     				lastUpdated='$date',
     				owm='$owm', 
     				wu='$wu', 
@@ -77,6 +77,6 @@
         echo json_encode(array(success => true));    
     }
     else{
-        echo json_encode(array(success => false));
+        echo json_encode(array(success => false, error => "No rows affected"));
     }	  
 ?>
