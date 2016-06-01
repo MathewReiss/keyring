@@ -175,6 +175,7 @@
       </div>
     </div>
 
+    <hr/>
     <br/>
 
     <div class="item-container">
@@ -182,6 +183,8 @@
         <input type="button" class="item-button" value="SAVE KEYS" id="save-button" onclick="saveKeys()">
       </div>
     </div>
+
+    <br/>
 
   <!--</form>-->
 
