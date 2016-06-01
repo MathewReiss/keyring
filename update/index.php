@@ -197,7 +197,7 @@
 
       var keys = {
         'pin' : <?php echo $pin?>,
-        'date' : <?php echo $date?>,
+        'date' : '<?php echo $date?>',
         'owm' : document.getElementById("owm").value,
         'wu' : document.getElementById("wu").value,
         'forecast' : document.getElementById("forecast").value,
