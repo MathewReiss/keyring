@@ -41,7 +41,7 @@
   <script>
     var savedPin = localStorage.getItem("pin");
     if(savedPin !== null){
-      document.getElementById("pin").value = savedPin;
+      document.getElementById("pin").value = parseInt(savedPin);
     }
 
     function login(){
