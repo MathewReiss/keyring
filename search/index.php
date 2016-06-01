@@ -1,7 +1,13 @@
 <?php
+	header("Access-Control-Allow-Headers: Content-Type");
+	header("Access-Control-Allow-Origin: *");
+	header("Access-Control-Allow-Methods: GET");
+	header("Content-type: application/json");
+
 	$servername = "$_ENV[DB_SERVERNAME]";
 	$username = "$_ENV[DB_USER]";
 	$password = "$_ENV[DB_PASSWORD]";
+	$tablename = "$_ENV[DB_TABLENAME]";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password);
@@ -9,22 +15,16 @@
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
-	    header("Access-Control-Allow-Origin: *");
-		header("Access-Control-Allow-Methods: *");
-		header("Content-type: application/json");
 	    echo json_encode(array(success => false) + array(error => "Could not connect to Pebble Master Key Database."), JSON_PRETTY_PRINT);
 	}
 
 	if(isset($_GET['pin'])) $pin = $_GET['pin'];
 	else{
 		$array = array(success => false, error => "You must provide a PIN as a URL parameter (pin).");
-		header("Access-Control-Allow-Origin: *");
-		header("Access-Control-Allow-Methods: *");
-		header("Content-type: application/json");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 
-	$sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring as kr WHERE kr.pin LIKE '$pin';";
+	$sql = "SELECT * FROM $tablename as kr WHERE kr.pin LIKE '$pin';";
 	$result = $conn->query($sql);			
 
 	if($result->num_rows == 1){
@@ -59,30 +59,18 @@
 
 		$array = array(success => true, lastUpdated => $result['lastUpdated'], keys => $keys);
 
-		header("Access-Control-Allow-Origin: *");
-		header("Access-Control-Allow-Methods: *");
-		header("Content-type: application/json");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 	else if(!is_numeric($_GET['pin'])){
-		$array = array(success => false, error => "PINs must be numeric-only.");
-		header("Access-Control-Allow-Origin: *");
-		header("Access-Control-Allow-Methods: *");
-		header("Content-type: application/json");
+		$array = array(success => false, error => "PINs must be numeric-only.");		
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 	else if($result->num_rows == 0){
 		$array = array(success => false, error => "Could not locate any keys for that PIN.");
-		header("Access-Control-Allow-Origin: *");
-		header("Access-Control-Allow-Methods: *");
-		header("Content-type: application/json");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 	else{
 		$array = array(success => false, error => "Unknown error. Please contact support.");
-		header("Access-Control-Allow-Origin: *");
-		header("Access-Control-Allow-Methods: *");
-		header("Content-type: application/json");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 	$conn->close();

@@ -46,7 +46,7 @@
     if(!is_null($_id)){
     	$sql = "UPDATE $tablename SET 
     				pin='$pin', 
-    				lastUpdated='$date'
+    				lastUpdated='$date',
     				owm='$owm', 
     				wu='$wu', 
     				forecast='$forecast', 
@@ -60,7 +60,7 @@
     //Existing PIN
     else{
     	$sql = "UPDATE $tablename SET 
-    				lastUpdated='$date'
+    				lastUpdated='$date',
     				owm='$owm', 
     				wu='$wu', 
     				forecast='$forecast', 
@@ -73,5 +73,10 @@
 
     $result = $mysqli->query($sql);
 
-	echo json_encode(array(success => true));  
+    if($mysqli->affected_rows == 1){
+        echo json_encode(array(success => true));    
+    }
+    else{
+        echo json_encode(array(success => false));
+    }	  
 ?>
