@@ -175,7 +175,7 @@
       </div>
     </div>
 
-    <hr/>
+    <br/>
 
     <div class="item-container">
       <div class="button-container">
