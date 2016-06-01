@@ -58,6 +58,6 @@
         echo json_encode(array(success => true));    
     }
     else{
-        echo json_encode(array(success => false, sql => $sql, error => "No rows affected"));
+        echo json_encode(array(success => false, sql => $sql, post => $_POST, error => "No rows affected"));
     }	  
 ?>
