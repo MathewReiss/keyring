@@ -10,7 +10,7 @@
   <script type="text/javascript" src="/dist/js/slate.min.js"></script>
 </head>
 <body>
-  <div class="item-container">
+  <div class="item-container" style="margin-left: 10%; margin-right: 10%;">
     <div class="item-container-header">Pebble Master Key</div>
     <div class="item-container-content">
       <label class="item">
@@ -29,7 +29,7 @@
     <div class="item-container-footer">Are you a Developer interested in integrating Master Key into your Pebble watchface or app? <a href="/developer">Click here</a> for Master Key Documentation and Example Implementations.</div>
   </div>
 
-  <div class="item-container">
+  <div class="item-container" style="margin-left: 10%; margin-right: 10%;">
     <div class="item-container-footer">
       <label class="item">
         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.pmkey.xyz" data-text="Check out #MasterKey for @Pebble! Makes life so much easier." data-size="large">Tweet #MasterKey</a>
