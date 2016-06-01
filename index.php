@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="/dist/css/slate.min.css">
   <link rel="icon" type="image/png" href="/favicon2.png">
   <script type="text/javascript" src="/dist/js/slate.min.js"></script>
-  <script src="jquery-2.1.0.min.js"></script>
 </head>
 <body>
   <div class="item-container">
@@ -49,7 +48,7 @@
       var pin = document.getElementById("pin").value;
 
       if(pin < 10000 || pin > 99999){
-        alert("Invalid PIN", "Please enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
+        alert("Invalid PIN", "Invalid Pin:Please enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
       }
       else{
         localStorage.setItem("savedPin", pin);
