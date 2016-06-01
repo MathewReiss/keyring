@@ -40,6 +40,11 @@
   </div>
 
   <script>
+    var savedPin = localStorage.getItem("pin");
+    if(savedPin !== null){
+      document.getElementById("pin").value = savedPin;
+    }
+
     function login(){
       var pin = document.getElementById("pin").value;
 
@@ -47,7 +52,7 @@
         alert("Invalid PIN", "Please enter your 5-digit PIN. If you do not remember it, you may sign up for a new PIN, or contact support.");
       }
       else{
-        console.log("Success!");
+        localStorage.setItem("savedPin", pin);
       }
     }
   </script>
