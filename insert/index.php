@@ -22,6 +22,8 @@
 
     $mysqli = new mysqli($servername, $username, $password);
 
+    echo "what is going on";
+
     if($mysqli->connect_error){
     	//die("Connection failed: " . $conn->connect_error);
 		echo json_encode(array(success => false));
