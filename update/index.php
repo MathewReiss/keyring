@@ -20,6 +20,7 @@
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
+          $tablename = "$_ENV[DB_TABLENAME]";
 
           $mysqli = new mysqli($servername, $username, $password);
 
@@ -34,7 +35,7 @@
             date_default_timezone_set('UTC');
             $date = date('Y-m-d H:i:s', time());
 
-            $sql = "SELECT * FROM heroku_f8bdd97336b1c2f.keyring AS kr WHERE kr.pin LIKE '$pin';";
+            $sql = "SELECT * FROM $tablename AS kr WHERE kr.pin LIKE '$pin';";
             $result = $mysqli->query($sql);
             
             if($result->num_rows == 0){
@@ -46,7 +47,7 @@
             }
           }
           else{
-            $sql = "INSERT INTO heroku_f8bdd97336b1c2f.keyring (lastUpdated) VALUES ('$date');";
+            $sql = "INSERT INTO $tablename (lastUpdated) VALUES ('$date');";
             $result = $mysqli->query($sql);
 
             $pin = bindec(strrev(str_pad(decbin($mysqli->insert_id), 16, '0', STR_PAD_LEFT))) + 10000;
