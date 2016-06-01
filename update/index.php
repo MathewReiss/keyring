@@ -214,6 +214,7 @@
       document.getElementById("save-button").value = "SAVING...";
 
       xhr.onreadystatechange = function(){
+        console.log(JSON.stringify(xhr));
         if(xhr.readyState === 4 && xhr.status === 200){
           document.getElementById("save-button").value = "SAVE KEYS";
 
