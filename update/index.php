@@ -76,6 +76,7 @@
     <div class="item-container">
       <div class="item-container-header">Open Weather Map</div>
       <div class="item-container-content">
+        To get an API Key for Open Weather Map, sign up at <a href="https://home.openweathermap.org/users/sign_up" target="_blank">openweathermap.org</a>.
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="owm" name="owm" value="<?php echo $owm?>">
@@ -87,6 +88,7 @@
     <div class="item-container">
       <div class="item-container-header">Weather Underground</div>
       <div class="item-container-content">
+        To get an API Key for Weather Underground, sign up at <a href="https://www.wunderground.com/weather/api/d/login.html?apiref=6e08cd57a6ecc73d" target="_blank">wunderground.com</a>.
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="wu" name="wu" value="<?php echo $wu?>">
@@ -98,6 +100,7 @@
     <div class="item-container">
       <div class="item-container-header">ForecastIO</div>
       <div class="item-container-content">
+        To get an API Key for Forecast.io, sign up at <a href="https://developer.forecast.io/register" target="_blank">forecast.io</a>.
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="forecast" name="forecast" value="<?php echo $forecast?>">
@@ -113,6 +116,7 @@
     <div class="item-container">
       <div class="item-container-header">IFTTT Maker Channel</div>
       <div class="item-container-content">
+        To get started with IFTTT and the Maker Channel, follow the instructions found <a href="https://mydogsnowy.com/ifttt/tutorial/" target="_blank">here</a>.
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="ifttt" name="ifttt" value="<?php echo $ifttt?>">
@@ -124,6 +128,7 @@
     <div class="item-container">
       <div class="item-container-header">Wolfram Alpha</div>
       <div class="item-container-content">
+        To get an API Key for Wolfram Alpha, sign up at <a href="https://developer.wolframalpha.com/portal/signup.html" target="_blank">wolframalpha.com</a>.
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="wolfram" name="wolfram" value="<?php echo $wolfram?>">
@@ -139,6 +144,7 @@
     <div class="item-container">
       <div class="item-container-header">My Habits</div>
       <div class="item-container-content">
+        To get an API Key for My Habits, open the Settings page in your Pebble Time app. For more details, visit the <a href="https://my-habits.net/about" target="_blank">My Habits website</a>.
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="habits" name="habits" value="<?php echo $habits?>">
@@ -150,6 +156,7 @@
     <div class="item-container">
       <div class="item-container-header">Travel/Departure</div>
       <div class="item-container-content">
+        To get an API Key for Travel or Departure, open the Settings page for either in your Pebble Time app.
         <label class="item">
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="travel" name="travel" value="<?php echo $travel?>">
