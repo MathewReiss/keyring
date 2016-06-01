@@ -13,7 +13,7 @@
 	header("Access-Control-Allow-Headers: Content-Type");
 	header("Access-Control-Allow-Origin: https://pmkey.xyz");
 	header("Access-Control-Allow-Methods: POST");
-	//header("Content-Type: application/json");
+	header("Content-Type: application/json");
 
 	$servername = "$_ENV[DB_SERVERNAME]";
     $username = "$_ENV[DB_USER]";
