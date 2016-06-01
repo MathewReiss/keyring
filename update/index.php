@@ -63,7 +63,7 @@
           $wolfram = $result['wolfram'];
 
           $habits = $result['habits'];
-          $travel = $travel['travel'];
+          $travel = $result['travel'];
 
           echo "Your PIN Code is: <strong>$pin</strong>";
         ?>
