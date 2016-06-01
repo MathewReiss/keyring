@@ -43,23 +43,13 @@
     $travel = $_POST['wolfram'];
 
     //New PIN
-    if(!is_null($_id)){
-    	$sql = "UPDATE TABLE $tablename SET 
-    				pin='$pin', 
-    				lastUpdated='$date',
-    				owm='$owm', 
-    				wu='$wu', 
-    				forecast='$forecast', 
-    				ifttt='$ifttt',
-    				wolfram='$wolfram',
-    				habits='$habits',
-    				travel='$travel' 
-    			WHERE id=$id;";
-
+    if(!is_null($id)){
+        //$sql = "UPDATE TABLE '$tablename' SET pin='$pin' WHERE id=$id;";
+    	$sql = "UPDATE TABLE '$tablename' SET pin='$pin', lastUpdated='$date', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE id=$id;";
     }
     //Existing PIN
     else{
-    	$sql = "UPDATE TABLE $tablename SET 
+    	$sql = "UPDATE TABLE '$tablename' SET 
     				lastUpdated='$date',
     				owm='$owm', 
     				wu='$wu', 
