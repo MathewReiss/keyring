@@ -1,4 +1,9 @@
 <?php
+	header("Access-Control-Allow-Headers: Content-Type");
+	header("Access-Control-Allow-Origin: https://pmkey.xyz");
+	header("Access-Control-Allow-Methods: POST");
+	header("Content-Type: application/json");
+
 	$servername = "$_ENV[DB_SERVERNAME]";
     $username = "$_ENV[DB_USER]";
     $password = "$_ENV[DB_PASSWORD]";
@@ -8,10 +13,6 @@
 
     if(true || $mysqli->connect_error){
     	die("Connection failed: " . $conn->connect_error);
-    	header("Access-Control-Allow-Headers: Content-Type");
-		header("Access-Control-Allow-Origin: https://pmkey.xyz");
-		header("Access-Control-Allow-Methods: POST");
-		header("Content-Type: application/json");
 		echo json_encode(array(success => false));
 		exit;
     }
@@ -61,9 +62,5 @@
 
     $result = $mysql->query($sql);
 
-	header("Access-Control-Allow-Headers: Content-Type");
-	header("Access-Control-Allow-Origin: https://pmkey.xyz");
-	header("Access-Control-Allow-Methods: POST");
-	header("Content-Type: application/json");
 	echo json_encode(array(success => true));    
 ?>
