@@ -42,6 +42,8 @@
               $result = $result->fetch_assoc();
               $pin = $result['pin'];
             }
+
+            $id = null;
           }
           else{
             date_default_timezone_set('UTC');
@@ -50,7 +52,8 @@
             $sql = "INSERT INTO $tablename (lastUpdated) VALUES ('$date');";
             $result = $mysqli->query($sql);
 
-            $pin = bindec(strrev(str_pad(decbin($mysqli->insert_id), 16, '0', STR_PAD_LEFT))) + 10000;
+            $id = $mysqli->insert_id;
+            $pin = bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
           }
           
           $wu = $result['wu'];
@@ -197,6 +200,7 @@
 
       var keys = {
         'pin' : <?php echo $pin?>,
+        'id' : <?php echo $id?>,
         'date' : '<?php echo $date?>',
         'owm' : document.getElementById("owm").value,
         'wu' : document.getElementById("wu").value,
