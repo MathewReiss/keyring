@@ -1,5 +1,5 @@
 <?php
-    /*
+/*
     // respond to preflights
     if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     // return only the headers and not the content
@@ -10,21 +10,13 @@
     }
     exit;
     }
+    */
 
-	header("Access-Control-Allow-Headers: Content-Type");
-	header("Access-Control-Allow-Origin: https://pmkey.xyz");
-	header("Access-Control-Allow-Methods: POST");
-	header("Content-Type: application/json");
-*/
+    header("Access-Control-Allow-Origin: https://pmkey.xyz");
+	header("Access-Control-Allow-Methods: OPTIONS, POST");
+    header("Access-Control-Allow-Headers: Content-Type");
 
-    header("Access-Control-Allow-Headers: *");
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: *");
-
-    if($_SERVER['REQUEST_METHOD'] != 'OPTIONS'){
-        header("Content-Type: application/json");
-    }
-    else{
+    if($_SERVER['REQUEST_METHOD'] == 'OPTIONS'){
         exit;
     }
 
