@@ -56,7 +56,7 @@
             $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
             $mysqli->query($sql);
 
-            echo '</font></div></div><script>document.location = document.location + "?pin=$pin";</script>';
+            echo '</font></div></div><script>document.location = document.location + "?pin=' . $pin . '";</script>';
           }
           
           $wu = $result['wu'];
