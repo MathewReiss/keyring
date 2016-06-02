@@ -14,7 +14,7 @@
     <div class="item-container-header">Pebble Master Key</div>
     <div class="item-container-content">
       <label class="item">
-        Pebble Master Key is a new service for Pebble users. Get a unique PIN and add API Keys for your favorite online services.<br />Then, enter your PIN on the Settings page of any <a href="https://apps.getpebble.com/en_US/search/watchapps/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br /><em>No more annoying copy/paste from your phone browser.<br /><br />No more exhaustingly long alphanumeric codes to type on a tiny keyboard.</em><br /><br />Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
+        Pebble Master Key is a new service for Pebble users. Get a unique PIN and add API Keys for your favorite online services.<br /><br />Then, enter your PIN on the Settings page of any <a href="https://apps.getpebble.com/en_US/search/watchapps/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br /><em>No more annoying copy/paste from your phone browser.<br /><br />No more long alphanumeric codes to type on a tiny keyboard.</em><br /><br />Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
       </label>
       <label class="item">
         <div class="item-input-wrapper item-input-wrapper-button">
@@ -24,6 +24,9 @@
       </label>
       <label class="item">
         <center>Don't have a PIN? <a href="/update">Click here</a> to sign up for one.</center>
+      </label>
+      <label class="item">
+        <center><a href="mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support" target="_blank">Contact Support</a>.</center>
       </label>
     </div>
     <div class="item-container-footer">Are you a Developer interested in integrating Master Key into your Pebble watchface or app? <a href="/developer">Click here</a> for Master Key Documentation and Example Implementations.</div>
