@@ -126,7 +126,7 @@
       <div class="item-container-header">IFTTT Maker Channel</div>
       <div class="item-container-content">
         <label class="item">
-          To get started with IFTTT and the Maker Channel, follow the instructions found <a href="https://mydogsnowy.com/ifttt/tutorial/" target="_blank">here</a>.
+          To get started with IFTTT and the Maker Channel, read the introduction <a href="http://blog.ifttt.com/post/121786069098/introducing-the-maker-channel" target="_blank">here</a>.
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="ifttt" name="ifttt" value="<?php echo $ifttt?>">
           </div>
