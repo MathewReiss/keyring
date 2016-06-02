@@ -55,11 +55,6 @@
 
             $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
             $mysqli>query($sql);
-
-            //header("Location: https://www.pmkey.xyz/update/?pin=$pin");
-            echo "TEST";
-            echo 'TEST</font></div></div><div>TEST</div><script type="text/javascript">window.location.href=window.location.href + "/?pin=$pin";</script>';
-            exit;
           }
           
           $wu = $result['wu'];
