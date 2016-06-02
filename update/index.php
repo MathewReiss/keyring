@@ -1,21 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
-  
-  <title>Pebble Master Key</title>
-  <link rel="stylesheet" href="/dist/css/slate.min.css">
-  <link rel="icon" type="image/png" href="/favicon2.png">
-  <script type="text/javascript" src="/dist/js/slate.min.js"></script>
-</head>
-<body style="margin-left: 10%; margin-right: 10%;">
 
-    <div class="item-container">
-      <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
-      <div class="item-container-footer"><font size="+1">
-  
-        <?php
+<?php
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
@@ -24,8 +9,8 @@
           $mysqli = new mysqli($servername, $username, $password);
 
           if($mysqli->connect_error){
-            die("Connection failed: " . $conn->connect_error);
-            echo "Error retrieving PIN Code... (Err 1)";
+            //die("Connection failed: " . $conn->connect_error);
+            $message = "Error retrieving PIN Code... (Err 1)";
           }
 
           date_default_timezone_set('UTC');
@@ -38,7 +23,7 @@
             $result = $mysqli->query($sql);
             
             if($result->num_rows == 0){
-              echo "Error retrieving PIN Code... (Err 2)";
+              $message = "Error retrieving PIN Code... (Err 2)";
             }
             else{
               $result = $result->fetch_assoc();
@@ -71,9 +56,25 @@
           $habits = $result['habits'];
           $travel = $result['travel'];
 
-          echo "Your PIN Code is: <strong>$pin</strong>";
+          $message = "Your PIN Code is: <strong>$pin</strong>";
         ?>
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
+  
+  <title>Pebble Master Key</title>
+  <link rel="stylesheet" href="/dist/css/slate.min.css">
+  <link rel="icon" type="image/png" href="/favicon2.png">
+  <script type="text/javascript" src="/dist/js/slate.min.js"></script>
+</head>
+<body style="margin-left: 10%; margin-right: 10%;">
+
+    <div class="item-container">
+      <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
+      <div class="item-container-footer"><font size="+1">
+        <?php echo $message?>
       </font></div>
     </div>
 
