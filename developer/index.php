@@ -24,7 +24,7 @@
         </label>
         <label class="item">
             <strong><font size="+2">API Endpoint</font></strong><br />
-            To get the relevant API keys, simply call the following URL via HTTP GET, passing the user's PIN as a parameter: <pre>https://pmkey.xyz/search?pin=10000</pre><br />
+            To get the relevant API keys, simply call the following URL via HTTP GET, passing the user's PIN as a parameter: <pre>https://pmkey.xyz/search/?pin=10000</pre><br />
             The JSON response will look like the following:<br />
             <pre>
   {
