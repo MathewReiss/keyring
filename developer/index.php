@@ -134,7 +134,7 @@
           };
         }
       &lt;/script&gt;
-    &gt;/body&lt;
+    &lt;/body&gt;
   &lt;/html&gt;
             </pre>
         </label>
