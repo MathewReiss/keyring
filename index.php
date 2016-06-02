@@ -26,7 +26,7 @@
         <center>Don't have a PIN? <a href="/update">Click here</a> to sign up for one.</center>
       </label>
       <label class="item">
-        <center><a href="mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support" target="_blank">Contact Support</a>.</center>
+        <center>Forgot your PIN? Other issues? <a href="mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support" target="_blank">Contact Support</a>.</center>
       </label>
     </div>
     <div class="item-container-footer">Are you a Developer interested in integrating Master Key into your Pebble watchface or app? <a href="/developer">Click here</a> for Master Key Documentation and Example Implementations.</div>
