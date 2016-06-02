@@ -17,6 +17,10 @@
             Master Key makes it easier than ever to ask your users to provide their own API keys for services with strict rate-limits. Rather than asking for a long Weather Underground API Key, for example, all you need from your user is their 5-digit Master Key PIN.
         </label>
         <label class="item">
+          <strong><font size="+2">Requirements</font></strong><br />
+          The only requirement for integrating Master Key into your app is to include "pmkey.xyz" in your Appstore Description. This is so that your watchface or app shows up when users search for <a href="https://apps.getpebble.com/en_US/search/watchapps/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchfaces or apps</a>.
+        </label>
+        <label class="item">
             <strong><font size="+2">API Endpoint</font></strong><br />
             To get the relevant API keys, simply call the following URL via HTTP GET, passing the user's PIN as a parameter: <pre>https://pmkey.xyz/search?pin=10000</pre><br />
             The JSON response will look like the following:<br />
