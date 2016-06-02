@@ -51,17 +51,84 @@
           </label>
           <label class="item">
             <strong><font size="+2">Simple Settings Page Example</font></strong><br />
-            Below is HTML and Javascript code for a simple implementation of Master Key in your Settings page.<br />
+            Below is the Javascript code for a simple implementation of Master Key, using the "webviewclosed" event handler in PebbleKit JS.<br />
             <pre>
-  &lt;html&gt;
-  &lt;/html&gt;
+Pebble.addEventListener("webviewclosed", function(e){
+  //Use the provided Master Key PIN to get relevant API keys, then store in localstorage.
+  var config = JSON.parse(decodeURIComponent(e.response));
+
+  var xhr = new XMLHttpRequest();
+  var url = "https://pmkey.xyz/search?pin=" + config.MasterKeyPIN;
+  
+  xhr.open("GET", url, true);
+  
+  xhr.onreadystatechanged = function(){
+    if(xhr.readyState == 4 && xhr.status == 200){
+      var result = JSON.parse(xhr.responseText);
+      if(result.success && result.keys.weather.wu !== ""){
+        localStorage.setItem("wuKey", result.keys.weather.wu);
+      }
+    }
+  };
+  
+  xhr.send();
+}
             </pre>
           </label>
           <label class="item">
             <strong><font size="+2">Advanced Settings Page Example</font></strong><br />
-            Below is HTML and Javascript code for a more advanced implementation of Master Key in your Settings page.<br />
+            Below is HTML and Javascript code for a more advanced implementation of Master Key, using Slate, directly in your Settings page.<br />
             <pre>
   &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;My App Settings&lt;/title&gt;
+      &lt;link rel="stylesheet" href="/dist/css/slate.min.css"&gt;
+      &lt;script type="text/javascript" src="/dist/js/slate.min.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &gt;body&lt;
+      &lt;div class="item-container"&gt;
+        &lt;div class="item-container-content"&gt;
+          &lt;div class="item"&gt;
+            Master Key allows your favorite Pebble watchfaces and apps to grab all your API keys via a simple 5-digit PIN code. To sign up, visit the &lt;a href="http://www.pmkey.xyz" target="_blank"&gt;Pebble Master Key Website&lt;/a&gt;.
+          &lt;/div&gt;
+          &lt;label class="item"&gt;
+            &lt;div class="item-input-wrapper item-input-wrapper-button"&gt;
+              &lt;input type="number" class="item-input" id="master"&gt;
+            &lt;/div&gt;
+            &lt;input type="button" class="item-button item-input-button" id="master-button" onclick="sync" value="SYNC"&gt;
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;label class="item"&gt;
+          &lt;div class="item-input-wrapper"&gt;
+            &lt;input type="text" class="item-input" id="wu"&gt;
+          &lt;/div&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;script&gt;
+        function sync(){
+          var xhr = new XMLHttpRequest();
+          var url = "https://pmkey.xyz/search?pin=" + document.getElementById("master").value;
+
+          xhr.open("GET", url, true);
+
+          var masterSync = document.getElementById("master-button");
+          masterSync.value = "LOADING...";
+
+          xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+              if(result.success){
+                masterSync.value = "SUCCESS";
+                document.getElementById("wu").value = result.keys.weather.wu;
+              }
+              else{
+                masterSync.value = "FAIL";
+              }
+            }
+          };
+        }
+      &lt;/script&gt;
+    &gt;/body&lt;
   &lt;/html&gt;
             </pre>
         </label>
