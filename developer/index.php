@@ -16,27 +16,27 @@
         <label class="item">
             Master Key makes it easier than ever to ask your users to provide their own API keys for services with strict rate-limits. Rather than asking for a long Weather Underground API Key, for example, all you need from your user is their 5-digit Master Key PIN.<br /><br />
             <strong>API Endpoint</strong><br />
-            To get the relevant API keys, simply call the following URL via HTTP GET: <pre>https://pmkey.xyz/search?pin=10000</pre>.<br /><br />
+            To get the relevant API keys, simply call the following URL via HTTP GET: <pre>https://pmkey.xyz/search?pin=10000</pre><br />
             The JSON response will look like the following:<br />
             <pre>
-              {
-                success : true,
-                lastUpdated : "2016-06-02 14:25:42",
-                keys : {
-                  weather : {
-                    owm : "owmapikey",
-                    wu : "wuapikey",
-                    forecast : "forecastapikey"
-                  },
-                  web : {
-                    ifttt : "makerapikey",
-                    wolfram : "wolframapikey"
-                  },
-                  pebble : {
-                    habits : "myhabitsapikey"
-                  }
-                }
-              }
+  {
+    success : true,
+    lastUpdated : "2016-06-02 14:25:42",
+    keys : {
+      weather : {
+        owm : "owmapikey",
+        wu : "wuapikey",
+        forecast : "forecastapikey"
+      },
+      web : {
+        ifttt : "makerapikey",
+        wolfram : "wolframapikey"
+      },
+      pebble : {
+        habits : "myhabitsapikey"
+      }
+    }
+  }
             </pre>
             <br /><br />
             Keep in mind that any one of these keys could be returned as an empty string.
@@ -44,15 +44,15 @@
             <strong>Simple Settings Page Example</strong><br />
             Below is HTML and Javascript code for a simple implementation of Master Key in your Settings page.<br /><br />
             <pre>
-              &lt;html&gt;
-              &lt;/html&gt;
+  &lt;html&gt;
+  &lt;/html&gt;
             </pre>
             <br /><br />
             <strong>Advanced Settings Page Example</strong><br />
             Below is HTML and Javascript code for a more advanced implementation of Master Key in your Settings page.<br /><br />
             <pre>
-              &lt;html&gt;
-              &lt;/html&gt;
+  &lt;html&gt;
+  &lt;/html&gt;
             </pre>
         </label>
 
