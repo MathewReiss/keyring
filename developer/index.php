@@ -54,7 +54,8 @@
             Below is the Javascript code for a simple implementation of Master Key, using the "webviewclosed" event handler in PebbleKit JS.<br />
             <pre>
 Pebble.addEventListener("webviewclosed", function(e){
-  //Use the provided Master Key PIN to get relevant API keys, then store in localstorage.
+  //Use the provided Master Key PIN to get relevant API keys, 
+  //then store in localstorage.
   var config = JSON.parse(decodeURIComponent(e.response));
 
   var xhr = new XMLHttpRequest();
@@ -89,7 +90,8 @@ Pebble.addEventListener("webviewclosed", function(e){
       &lt;div class="item-container"&gt;
         &lt;div class="item-container-content"&gt;
           &lt;div class="item"&gt;
-            Master Key allows your favorite Pebble watchfaces and apps to grab all your API keys via a simple 5-digit PIN code. To sign up, visit the &lt;a href="http://www.pmkey.xyz" target="_blank"&gt;Pebble Master Key Website&lt;/a&gt;.
+            Master Key allows your favorite Pebble watchfaces and apps to grab all your API keys via a simple 5-digit PIN code.&lt;br /&gt;
+            To sign up, visit the &lt;a href="http://www.pmkey.xyz" target="_blank"&gt;Pebble Master Key Website&lt;/a&gt;.
           &lt;/div&gt;
           &lt;label class="item"&gt;
             &lt;div class="item-input-wrapper item-input-wrapper-button"&gt;
