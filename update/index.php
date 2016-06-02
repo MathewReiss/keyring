@@ -57,7 +57,7 @@
             $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
             $mysqli>query($sql);
 
-            echo "<script>document.location = 'https://www.pmkey.xyz/update/?pin=$pin';</script>";
+            echo "</font></div></div><script>document.location = 'https://www.pmkey.xyz/update/?pin=$pin';</script>";
             exit;
           }
           
