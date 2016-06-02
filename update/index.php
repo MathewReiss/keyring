@@ -42,7 +42,8 @@
             $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
             $mysqli>query($sql);
 
-            header("Location: https://www.pmkey.xyz/update/?pin=$pin");
+            //header("Location: https://www.pmkey.xyz/update/?pin=$pin");
+            die('<script type="text/javascript">window.location.href=window.location.href + "/?pin=$pin";</script>');
             exit;
           }
           
