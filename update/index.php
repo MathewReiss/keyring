@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
+  
+  <title>Pebble Master Key</title>
+  <link rel="stylesheet" href="/dist/css/slate.min.css">
+  <link rel="icon" type="image/png" href="/favicon2.png">
+  <script type="text/javascript" src="/dist/js/slate.min.js"></script>
+</head>
+<body style="margin-left: 10%; margin-right: 10%;">
+
+    <div class="item-container">
+      <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
+      <div class="item-container-footer"><font size="+1">
+        <?php
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
@@ -10,7 +24,7 @@
 
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
-            $message = "Error retrieving PIN Code... (Err 1)";
+            echo "Error retrieving PIN Code... (Err 1)";
           }
 
           date_default_timezone_set('UTC');
@@ -43,7 +57,7 @@
             $mysqli>query($sql);
 
             //header("Location: https://www.pmkey.xyz/update/?pin=$pin");
-            die('<script type="text/javascript">window.location.href=window.location.href + "/?pin=$pin";</script>');
+            die('</font></div></div><script type="text/javascript">window.location.href=window.location.href + "/?pin=$pin";</script>');
             exit;
           }
           
@@ -57,23 +71,8 @@
           $habits = $result['habits'];
           $travel = $result['travel'];
 
-          $message = "Your PIN Code is: <strong>$pin</strong>";
+          echo "Your PIN Code is: <strong>$pin</strong>";
         ?>
-<head>
-  <meta charset="UTF-8" />
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
-  
-  <title>Pebble Master Key</title>
-  <link rel="stylesheet" href="/dist/css/slate.min.css">
-  <link rel="icon" type="image/png" href="/favicon2.png">
-  <script type="text/javascript" src="/dist/js/slate.min.js"></script>
-</head>
-<body style="margin-left: 10%; margin-right: 10%;">
-
-    <div class="item-container">
-      <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
-      <div class="item-container-footer"><font size="+1">
-        <?php echo $message?>
       </font></div>
     </div>
 
