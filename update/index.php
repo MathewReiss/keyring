@@ -188,9 +188,12 @@
         <input type="button" class="item-button" value="SAVE KEYS" id="save-button" onclick="saveKeys()">
       </div>
     </div>
-
     <br/>
 
+    <div class="item-container">
+      <div class="item-container-footer">Master Key is a 3rd Party Service not affiliated with Pebble Technology Corp. All references to Pebble™ are purely for descriptive purposes.</div>
+    </div>
+    
   <script>
     function saveKeys(){
       var xhr = new XMLHttpRequest();
