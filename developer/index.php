@@ -14,10 +14,10 @@
       <div class="item-container-header">Pebble Master Key</div>
       <div class="item-container-content">
         <label class="item">
-            Master Key makes it easier than ever to ask your users to provide their own API keys for services with strict rate-limits. Rather than asking for a long Weather Underground API Key, for example, all you need from your user is their 5-digit Master Key PIN.<br /><br />
+            Master Key makes it easier than ever to ask your users to provide their own API keys for services with strict rate-limits. Rather than asking for a long Weather Underground API Key, for example, all you need from your user is their 5-digit Master Key PIN.
         </label>
         <label class="item">
-            <strong><font size="+1">API Endpoint</font></strong><br />
+            <strong><font size="+2">API Endpoint</font></strong><br />
             To get the relevant API keys, simply call the following URL via HTTP GET, passing the user's PIN as a parameter: <pre>https://pmkey.xyz/search?pin=10000</pre><br />
             The JSON response will look like the following:<br />
             <pre>
@@ -42,7 +42,7 @@
             </pre>
             <em>Keep in mind that any one of these keys could be returned as an empty string</em>.<br /><br />
             If there is an error with your request, the JSON response will look like the following:<br />
-            <ore>
+            <pre>
   {
     success : false,
     error : "Could not locate any keys for that PIN."
@@ -50,8 +50,7 @@
             </pre>
           </label>
           <label class="item">
-            <br /><br />
-            <strong><font size="+1">Simple Settings Page Example</font></strong><br />
+            <strong><font size="+2">Simple Settings Page Example</font></strong><br />
             Below is HTML and Javascript code for a simple implementation of Master Key in your Settings page.<br />
             <pre>
   &lt;html&gt;
@@ -59,7 +58,7 @@
             </pre>
           </label>
           <label class="item">
-            <strong><font size="+1">Advanced Settings Page Example</font></strong><br />
+            <strong><font size="+2">Advanced Settings Page Example</font></strong><br />
             Below is HTML and Javascript code for a more advanced implementation of Master Key in your Settings page.<br />
             <pre>
   &lt;html&gt;
