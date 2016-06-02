@@ -92,7 +92,7 @@
       &lt;link rel="stylesheet" href="/dist/css/slate.min.css"&gt;
       &lt;script type="text/javascript" src="/dist/js/slate.min.js"&gt;&lt;/script&gt;
     &lt;/head&gt;
-    &gt;body&lt;
+    &lt;body&gt;
       &lt;div class="item-container"&gt;
         &lt;div class="item-container-content"&gt;
           &lt;div class="item"&gt;
