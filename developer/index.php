@@ -53,27 +53,27 @@
             <strong><font size="+2">Simple Settings Page Example</font></strong><br />
             Below is the Javascript code for a simple implementation of Master Key, using the "webviewclosed" event handler in PebbleKit JS.<br />
             <pre>
-Pebble.addEventListener("webviewclosed", function(e){
-  //Use the provided Master Key PIN to get relevant API keys, 
-  //then store in localstorage.
-  var config = JSON.parse(decodeURIComponent(e.response));
+  Pebble.addEventListener("webviewclosed", function(e){
+    //Use the provided Master Key PIN to get relevant API keys, 
+    //then store in localstorage.
+    var config = JSON.parse(decodeURIComponent(e.response));
 
-  var xhr = new XMLHttpRequest();
-  var url = "https://pmkey.xyz/search/?pin=" + config.MasterKeyPIN;
+    var xhr = new XMLHttpRequest();
+    var url = "https://pmkey.xyz/search/?pin=" + config.MasterKeyPIN;
   
-  xhr.open("GET", url, true);
+    xhr.open("GET", url, true);
   
-  xhr.onreadystatechanged = function(){
-    if(xhr.readyState == 4 && xhr.status == 200){
-      var result = JSON.parse(xhr.responseText);
-      if(result.success && result.keys.weather.wu !== ""){
-        localStorage.setItem("wuKey", result.keys.weather.wu);
+    xhr.onreadystatechanged = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+        var result = JSON.parse(xhr.responseText);
+        if(result.success && result.keys.weather.wu !== ""){
+          localStorage.setItem("wuKey", result.keys.weather.wu);
+        }
       }
-    }
-  };
+    };
   
-  xhr.send();
-}
+    xhr.send();
+  }
             </pre>
           </label>
           <label class="item">
