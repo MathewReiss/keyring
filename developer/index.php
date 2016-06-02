@@ -20,7 +20,7 @@
           <strong><font size="+2">Requirements</font></strong><br />
           The only requirements for integrating Master Key into your app are to:<br />
           • Include "pmkey.xyz" in your Appstore Description so that your watchface or app shows up when users search for <a href="https://apps.getpebble.com/en_US/search/watchapps/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchfaces or apps</a>.<br />
-          • Not abuse the API by attempting to scrape or pull keys in any way not for the sole purpose of benefitting the end user in the manner described above. This API is a free service that I provide for fun, and will be shut down if it is abused.
+          • Not abuse the API by attempting to scrape or manipulate data in any way. This API is a free service for the benefit of Pebble developers and users, and will be shut down if it is abused.
         </label>
         <label class="item">
             <strong><font size="+2">API Endpoint</font></strong><br />
