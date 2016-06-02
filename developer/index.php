@@ -58,7 +58,7 @@ Pebble.addEventListener("webviewclosed", function(e){
   var config = JSON.parse(decodeURIComponent(e.response));
 
   var xhr = new XMLHttpRequest();
-  var url = "https://pmkey.xyz/search?pin=" + config.MasterKeyPIN;
+  var url = "https://pmkey.xyz/search/?pin=" + config.MasterKeyPIN;
   
   xhr.open("GET", url, true);
   
@@ -108,7 +108,7 @@ Pebble.addEventListener("webviewclosed", function(e){
       &lt;script&gt;
         function sync(){
           var xhr = new XMLHttpRequest();
-          var url = "https://pmkey.xyz/search?pin=" + document.getElementById("master").value;
+          var url = "https://pmkey.xyz/search/?pin=" + document.getElementById("master").value;
 
           xhr.open("GET", url, true);
 
