@@ -71,10 +71,8 @@
           $habits = $result['habits'];
           $travel = $result['travel'];
 
-          echo "Your PIN Code is: <strong>$pin</strong>";
+          echo "Your PIN Code is: <strong>$pin</strong></font></div></div>";
         ?>
-      </font></div>
-    </div>
 
     <div class="item-container">
       <div class="item-container-header"><font size="+1"><strong>Weather</strong></font></div>
