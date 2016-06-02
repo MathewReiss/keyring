@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="/favicon2.png">
   <script type="text/javascript" src="https://dl.dropboxusercontent.com/s/zyba8qboh5czip8/slate.js"></script>
 </head>
-<body>
+<body style="margin-left: 10%; margin-right: 10%;">
   <div class="item-container">
       <div class="item-container-header">Pebble Master Key</div>
       <div class="item-container-content">
@@ -38,18 +38,16 @@
     }
   }
             </pre>
-            <br /><br />
-            Keep in mind that any one of these keys could be returned as an empty string.
+            <em>Keep in mind that any one of these keys could be returned as an empty string</em>.
             <br /><br />
             <strong>Simple Settings Page Example</strong><br />
-            Below is HTML and Javascript code for a simple implementation of Master Key in your Settings page.<br /><br />
+            Below is HTML and Javascript code for a simple implementation of Master Key in your Settings page.<br />
             <pre>
   &lt;html&gt;
   &lt;/html&gt;
             </pre>
-            <br /><br />
             <strong>Advanced Settings Page Example</strong><br />
-            Below is HTML and Javascript code for a more advanced implementation of Master Key in your Settings page.<br /><br />
+            Below is HTML and Javascript code for a more advanced implementation of Master Key in your Settings page.<br />
             <pre>
   &lt;html&gt;
   &lt;/html&gt;
