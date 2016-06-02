@@ -48,13 +48,13 @@
           }
           else{
             $sql = "INSERT INTO $tablename (lastUpdated) VALUES ('$date');";
-            $mysqli->query($sql);
+            $result = $mysqli->query($sql);
 
             $id = $mysqli->insert_id;
             $pin = bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
 
             $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
-            $mysqli>query($sql);
+            $result = $mysqli>query($sql);
           }
           
           $wu = $result['wu'];
