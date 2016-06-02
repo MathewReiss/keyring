@@ -57,7 +57,7 @@
             $mysqli>query($sql);
 
             //header("Location: https://www.pmkey.xyz/update/?pin=$pin");
-            die('</font></div></div><script type="text/javascript">window.location.href=window.location.href + "/?pin=$pin";</script>');
+            echo '</font></div></div><div>TEST</div><script type="text/javascript">window.location.href=window.location.href + "/?pin=$pin";</script>';
             exit;
           }
           
