@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <?php
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
@@ -59,8 +59,6 @@
 
           $message = "Your PIN Code is: <strong>$pin</strong>";
         ?>
-
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
