@@ -55,7 +55,7 @@
             $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
             $mysqli->query($sql);
 
-            echo '</font></div></div><script>document.location = document.location + "?email=' . $email . '&pin=' . $pin . '";</script>';
+            echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '";</script>';
           }
           else{
             echo "Error with email... (Err 3)";
