@@ -16,7 +16,7 @@
       <div class="item-container-footer"><font size="+1">
         <?php
           echo "STEP 1";
-          exit;
+          /*exit;
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
@@ -92,7 +92,7 @@
 
           echo "Your PIN Code is: <strong>$pin</strong></font></div></div>";
 
-          $mysqli->close();
+          $mysqli->close();*/
         ?>
 
     <div class="item-container">
