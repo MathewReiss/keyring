@@ -53,10 +53,11 @@
 
             echo "<br />RESULT<br />" . implode(" ", $result);
 
-            }/*
+            
             
             if($result->num_rows == 0){
               $message = "Error retrieving PIN Code... (Err 2)";
+              echo $message;
             }
             else{
               $result = $result->fetch_assoc();
@@ -64,6 +65,10 @@
             }
 
             $id = $result['id'];
+
+            echo "<br />ID<br />" . $id;
+
+            }/*
           }
           else if(isset($_GET['email']){
             echo "STEP 4-B";
