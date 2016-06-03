@@ -15,6 +15,8 @@
       <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
       <div class="item-container-footer"><font size="+1">
         <?php
+          echo "STEP 1";
+
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
@@ -22,13 +24,19 @@
 
           $mysqli = new mysqli($servername, $username, $password);
 
+          echo "STEP 2";
+
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
             echo "Error retrieving PIN Code... (Err 1)";
             exit;
           }
 
+          echo "STEP 3";
+
           if(isset($_GET['email'] && isset($_GET['pin'])){
+            echo "STEP 4-A";
+
             $email = $mysqli->real_escape_string($_GET['email']);
             $pin = $mysqli->real_escape_string($_GET['pin']);
 
@@ -48,6 +56,8 @@
             $id = $result['id'];
           }
           else if(isset($_GET['email']){
+            echo "STEP 4-B";
+
             $email = $mysqli->real_escape_string($_GET['email']);
 
             $sql = "INSERT INTO $tablename (email) VALUES ('$email');";
@@ -62,9 +72,13 @@
             echo '</font></div></div><script>document.location = document.location + "?email=' . $email . '&pin=' . $pin . '";</script>';
           }
           else{
+            echo "STEP 4-C";
+
             echo "Error with email... (Err 3)";
             exit;
           }
+
+          echo "STEP 5";
           
           $wu = $result['wu'];
           $owm = $result['owm'];
