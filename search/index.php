@@ -28,8 +28,12 @@
 		exit;
 	}
 
+	echo $email . ", " . $pin . "<br />";
+
 	$sql = "SELECT * FROM $tablename as kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
-	$result = $conn->query($sql);			
+	$result = $conn->query($sql);		
+
+	echo $result;	
 
 	if($result->num_rows == 1){
 		$result = $result->fetch_assoc();
