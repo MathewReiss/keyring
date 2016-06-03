@@ -20,9 +20,9 @@
 
 	if(isset($_GET['email']) && isset($_GET['pin'])){
 		echo "Error? " . $_GET['email'] . ", " . $_GET['pin'];
-		$email = mysqli_escape_string($_GET['email']);
+		$email = mysqli_real_escape_string($mysqli, $_GET['email']);
 		echo $email;
-		$pin = mysqli_escape_string($_GET['pin']);
+		$pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
 		echo $pin;
 	}
 	else{
