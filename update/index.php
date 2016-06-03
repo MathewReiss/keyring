@@ -90,7 +90,7 @@
 
           echo "Your PIN Code is: <strong>$pin</strong></font></div></div>";
 
-          $mysqli->close();*/
+          $mysqli->close();
         ?>
 
     <div class="item-container">
