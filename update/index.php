@@ -25,14 +25,14 @@
           $mysqli = new mysqli($servername, $username, $password);
 
           echo "STEP 2";
-/*
+
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
             echo "Error retrieving PIN Code... (Err 1)";
           }
 
           echo "STEP 3";
-
+/*
           if(isset($_GET['email'] && isset($_GET['pin'])){
             echo "STEP 4-A";
 
