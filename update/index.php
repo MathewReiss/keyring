@@ -15,7 +15,7 @@
       <div class="item-container-header"><font size="+2">Master Key Settings</font></div>
       <div class="item-container-footer"><font size="+1">
         <?php
-          echo "STEP 1?";
+          echo "STEP 1";
           
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
@@ -24,22 +24,28 @@
 
           $mysqli = new mysqli($servername, $username, $password);
 
-          echo "STEP 2?";
+          echo "STEP 2";
 
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
             echo "Error retrieving PIN Code... (Err 1)";
           }
 
-          echo "STEP 3?";
+          echo "STEP 3";
+
+         
 
           if( $_GET['email'] != "" &&  $_GET['pin'] != "" ){
             echo "STEP 4-A";
-
+}else{
+echo "Step 4-B";
+}/*
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
             $pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
 
             echo $email . ", " . $pin;
+
+            
 
             $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
             $result = $mysqli->query($sql);
