@@ -27,8 +27,8 @@
         <input type="button" class="item-button item-input-button" id="pin-button" name="pin-button" value="SIGN IN" onclick="login()">
       </label>
       <label class="item">
-        <center>Don't have a PIN? Enter your email below and click "Sign Up" to sign up for one.</center>
-        <div class="item-input=wrapper item-input-wrapper-button">
+        <center>Don't have a PIN? Enter your email below to sign up.</center>
+        <div class="item-input-wrapper item-input-wrapper-button">
           <input type="text" class="item-input" id="email2" name="email2" placeholder="Your email address">
         </div>
         <input type="button" class="item-button item-input-button" id="pin-button2" name="pin-button2" value="SIGN UP" onclick="register()">
