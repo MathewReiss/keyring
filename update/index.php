@@ -37,15 +37,11 @@
 
           if( $_GET['email'] != "" &&  $_GET['pin'] != "" ){
             echo "STEP 4-A";
-}else{
-echo "Step 4-B";
-}/*
+
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
             $pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
 
             echo $email . ", " . $pin;
-
-            
 
             $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
             $result = $mysqli->query($sql);
