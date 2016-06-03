@@ -45,13 +45,13 @@
 
             $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
             
-            echo "<br />" . $sql;
+            echo "<br />SQL: <br />" . $sql;
 
           
 
             $result = $mysqli->query($sql);
 
-            echo "<br />" . implode(" ", $result);
+            echo "<br />RESULT<br />" . implode(" ", $result);
 
             }/*
             
