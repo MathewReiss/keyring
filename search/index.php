@@ -14,8 +14,9 @@
 
 	// Check connection
 	if ($mysqli->connect_error) {
-	    die("Connection failed: " . $mysqli->connect_error);
+	    //die("Connection failed: " . $mysqli->connect_error);
 	    echo json_encode(array(success => false) + array(error => "Could not connect to Pebble Master Key Database."), JSON_PRETTY_PRINT);
+	    exit;
 	}
 
 	if(isset($_GET['email']) && isset($_GET['pin'])){
@@ -77,5 +78,5 @@
 		$array = array(success => false, error => "Unknown error. Please contact support.");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
-	$conn->close();
+	$mysqli->close();
 ?>

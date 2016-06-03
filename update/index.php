@@ -37,8 +37,8 @@
           if(isset($_GET['email'] && isset($_GET['pin'])){
             echo "STEP 4-A";
 
-            $email = $mysqli->real_escape_string($_GET['email']);
-            $pin = $mysqli->real_escape_string($_GET['pin']);
+            $email = mysqli_real_escape_string($mysqli, $_GET['email']);
+            $pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
 
             echo $email . ", " . $pin;
 
@@ -58,7 +58,7 @@
           else if(isset($_GET['email']){
             echo "STEP 4-B";
 
-            $email = $mysqli->real_escape_string($_GET['email']);
+            $email = mysqli_real_escape_string($mysqli, $_GET['email']);
 
             $sql = "INSERT INTO $tablename (email) VALUES ('$email');";
             $mysqli->query($sql);

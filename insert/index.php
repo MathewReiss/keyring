@@ -14,19 +14,19 @@
 		exit;
     }
 
-    $email = $mysqli->real_escape_string($_GET['email']);
-    $pin = $mysqli->real_escape_string($_GET['pin']);
-    $id = $mysqli->real_escape_string($_GET['id']);
+    $email = mysqli_real_escape_string($mysqli, $_GET['email']);
+    $pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
+    $id = mysqli_real_escape_string($mysqli, $_GET['id']);
 
-    $owm = $mysqli->real_escape_string($_GET['owm']);
-    $wu = $mysqli->real_escape_string($_GET['wu']);
-    $forecast = $mysqli->real_escape_string($_GET['forecast']);
+    $owm = mysqli_real_escape_string($mysqli, $_GET['owm']);
+    $wu = mysqli_real_escape_string($mysqli, $_GET['wu']);
+    $forecast = mysqli_real_escape_string($mysqli, $_GET['forecast']);
 
-    $ifttt = $mysqli->real_escape_string($_GET['ifttt']);
-    $wolfram = $mysqli->real_escape_string($_GET['wolfram']);
+    $ifttt = mysqli_real_escape_string($mysqli, $_GET['ifttt']);
+    $wolfram = mysqli_real_escape_string($mysqli, $_GET['wolfram']);
 
-    $habits = $mysqli->real_escape_string($_GET['habits']);
-    $travel = $mysqli->real_escape_string($_GET['travel']);
+    $habits = mysqli_real_escape_string($mysqli, $_GET['habits']);
+    $travel = mysqli_real_escape_string($mysqli, $_GET['travel']);
 
     //New PIN
     if(!is_null($id)){
@@ -45,5 +45,6 @@
     }
     else{
         echo json_encode(array(success => false, error => "No rows affected"));
-    }	  
+    }	
+    $mysqli->close();  
 ?>
