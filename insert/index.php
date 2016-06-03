@@ -14,28 +14,28 @@
 		exit;
     }
 
-    $pin = $_GET['pin'];
-    $id = $_GET['id'];
-    $date = $_GET['date'];
+    $email = $mysqli->real_scape_string($_GET['email']);
+    $pin = $mysqli->real_scape_string($_GET['pin']);
+    $id = $mysqli->real_scape_string($_GET['id']);
 
-    $owm = $_GET['owm'];
-    $wu = $_GET['wu'];
-    $forecast = $_GET['forecast'];
+    $owm = $mysqli->real_scape_string($_GET['owm']);
+    $wu = $mysqli->real_scape_string($_GET['wu']);
+    $forecast = $mysqli->real_scape_string($_GET['forecast']);
 
-    $ifttt = $_GET['ifttt'];
-    $wolfram = $_GET['wolfram'];
+    $ifttt = $mysqli->real_scape_string($_GET['ifttt']);
+    $wolfram = $mysqli->real_scape_string($_GET['wolfram']);
 
-    $habits = $_GET['habits'];
-    $travel = $_GET['travel'];
+    $habits = $mysqli->real_scape_string($_GET['habits']);
+    $travel = $mysqli->real_scape_string($_GET['travel']);
 
     //New PIN
     if(!is_null($id)){
         $pin = bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
-    	$sql = "UPDATE $tablename SET pin='$pin', lastUpdated='$date', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE id=$id;";
+    	$sql = "UPDATE $tablename SET pin='$pin', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE id=$id AND email=$email;";
     }
     //Existing PIN
     else{
-    	$sql = "UPDATE $tablename SET lastUpdated='$date', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE pin=$pin;";
+    	$sql = "UPDATE $tablename SET owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE pin=$pin AND email=$email;";
     }
 
     $result = $mysqli->query($sql);

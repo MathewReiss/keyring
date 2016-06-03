@@ -25,15 +25,14 @@
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
             echo "Error retrieving PIN Code... (Err 1)";
+            exit;
           }
 
-          date_default_timezone_set('UTC');
-          $date = date('Y-m-d H:i:s', time());
+          if(isset($_GET['email'] && isset($_GET['pin'])){
+            $email = $mysqli->real_escape_string($_GET['email']);
+            $pin = $mysqli->real_escape_string($_GET['pin']);
 
-          if(isset($_GET['pin'])){
-            $pin = $_GET['pin'];
-
-            $sql = "SELECT * FROM $tablename AS kr WHERE kr.pin LIKE '$pin';";
+            $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email' AND kr.pin=$pin;";
             $result = $mysqli->query($sql);
             
             if($result->num_rows == 0){
@@ -46,8 +45,10 @@
 
             $id = $result['id'];
           }
-          else{
-            $sql = "INSERT INTO $tablename (lastUpdated) VALUES ('$date');";
+          else if(isset($_GET['email']){
+            $email = $mysqli->real_escape_string($_GET['email']);
+
+            $sql = "INSERT INTO $tablename (email) VALUES ('$email');";
             $mysqli->query($sql);
 
             $id = $mysqli->insert_id;
@@ -56,7 +57,11 @@
             $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
             $mysqli->query($sql);
 
-            echo '</font></div></div><script>document.location = document.location + "?pin=' . $pin . '";</script>';
+            echo '</font></div></div><script>document.location = document.location + "?email=' . $email . '&pin=' . $pin . '";</script>';
+          }
+          else{
+            echo "Error with email... (Err 3)";
+            exit;
           }
           
           $wu = $result['wu'];
@@ -198,7 +203,7 @@
     function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
-      url += "?pin=<?php echo $pin?>&id=<?php echo $id?>&date=<?php echo $date?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value;// + "&travel=" + document.getElementById("travel").value;
+      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&id=<?php echo $id?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value;// + "&travel=" + document.getElementById("travel").value;
       xhr.open("GET", url, true);
 
       document.getElementById("save-button").value = "SAVING...";
