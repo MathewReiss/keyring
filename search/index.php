@@ -21,11 +21,14 @@
 	if(isset($_GET['email']) && isset($_GET['pin'])){
 		echo "Error? " . $_GET['email'] . ", " . $_GET['pin'];
 		$email = mysqli_escape_string($_GET['email']);
+		echo $email;
 		$pin = mysqli_escape_string($_GET['pin']);
+		echo $pin;
 	}
 	else{
 		$array = array(success => false, error => "You must provide an Email and PIN as a URL parameter (pin).");
 		echo json_encode($array, JSON_PRETTY_PRINT);
+		exit;
 	}
 
 	$sql = "SELECT * FROM $tablename as kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
