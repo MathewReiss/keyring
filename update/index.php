@@ -25,7 +25,7 @@
           $mysqli = new mysqli($servername, $username, $password);
 
           echo "STEP 2";
-
+/*
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
             echo "Error retrieving PIN Code... (Err 1)";
@@ -90,7 +90,7 @@
 
           echo "Your PIN Code is: <strong>$pin</strong></font></div></div>";
 
-          $mysqli->close();
+          $mysqli->close();*/
         ?>
 
     <div class="item-container">
