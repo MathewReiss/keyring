@@ -28,20 +28,20 @@
             The JSON response will look like the following:<br />
             <pre>
   {
-    success : true,
-    lastUpdated : "2016-06-02 14:25:42",
-    keys : {
-      weather : {
-        owm : "owmapikey",
-        wu : "wuapikey",
-        forecast : "forecastapikey"
+    "success" : true,
+    "lastUpdated" : "2016-06-02 14:25:42",
+    "keys" : {
+      "weather" : {
+        "owm" : "owmapikey",
+        "wu" : "wuapikey",
+        "forecast" : "forecastapikey"
       },
-      web : {
-        ifttt : "makerapikey",
-        wolfram : "wolframapikey"
+      "web" : {
+        "ifttt" : "makerapikey",
+        "wolfram" : "wolframapikey"
       },
-      pebble : {
-        habits : "myhabitsapikey"
+      "pebble" : {
+        "habits" : "myhabitsapikey"
       }
     }
   }
@@ -50,8 +50,8 @@
             If there is an error with your request, the JSON response will look like the following:<br />
             <pre>
   {
-    success : false,
-    error : "Could not locate any keys for that PIN."
+    "success" : false,
+    "error" : "Could not locate any keys for that PIN."
   }
             </pre>
           </label>
