@@ -41,9 +41,14 @@
 
             echo $email . ", " . $pin;
 
-            }/*            
+                        
 
             $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
+            
+            echo "<br />" . $sql;
+
+          }/*
+
             $result = $mysqli->query($sql);
             
             if($result->num_rows == 0){
