@@ -16,7 +16,7 @@
       <div class="item-container-footer"><font size="+1">
         <?php
           echo "STEP 1";
-          /*exit;
+          
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
@@ -29,12 +29,11 @@
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
             echo "Error retrieving PIN Code... (Err 1)";
-            exit;
           }
 
           echo "STEP 3";
 
-          if(false && isset($_GET['email'] && isset($_GET['pin'])){
+          if(isset($_GET['email'] && isset($_GET['pin'])){
             echo "STEP 4-A";
 
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
@@ -55,7 +54,7 @@
 
             $id = $result['id'];
           }
-          else if(false && isset($_GET['email']){
+          else if(isset($_GET['email']){
             echo "STEP 4-B";
 
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
@@ -75,7 +74,6 @@
             echo "STEP 4-C";
 
             echo "Error with email... (Err 3)";
-            exit;
           }
 
           echo "STEP 5";
