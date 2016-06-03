@@ -33,7 +33,7 @@
 
           echo "STEP 3";
 
-          echo $_GET;
+          echo implode(" ", $_GET);
 /*
           if( isset($_GET['email'], $_GET['pin']) ){
             echo "STEP 4-A";
