@@ -14,19 +14,19 @@
 		exit;
     }
 
-    $email = $mysqli->real_scape_string($_GET['email']);
-    $pin = $mysqli->real_scape_string($_GET['pin']);
-    $id = $mysqli->real_scape_string($_GET['id']);
+    $email = $mysqli->real_escape_string($_GET['email']);
+    $pin = $mysqli->real_escape_string($_GET['pin']);
+    $id = $mysqli->real_escape_string($_GET['id']);
 
-    $owm = $mysqli->real_scape_string($_GET['owm']);
-    $wu = $mysqli->real_scape_string($_GET['wu']);
-    $forecast = $mysqli->real_scape_string($_GET['forecast']);
+    $owm = $mysqli->real_escape_string($_GET['owm']);
+    $wu = $mysqli->real_escape_string($_GET['wu']);
+    $forecast = $mysqli->real_escape_string($_GET['forecast']);
 
-    $ifttt = $mysqli->real_scape_string($_GET['ifttt']);
-    $wolfram = $mysqli->real_scape_string($_GET['wolfram']);
+    $ifttt = $mysqli->real_escape_string($_GET['ifttt']);
+    $wolfram = $mysqli->real_escape_string($_GET['wolfram']);
 
-    $habits = $mysqli->real_scape_string($_GET['habits']);
-    $travel = $mysqli->real_scape_string($_GET['travel']);
+    $habits = $mysqli->real_escape_string($_GET['habits']);
+    $travel = $mysqli->real_escape_string($_GET['travel']);
 
     //New PIN
     if(!is_null($id)){

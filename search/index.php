@@ -10,21 +10,24 @@
 	$tablename = "$_ENV[DB_TABLENAME]";
 
 	// Create connection
-	$conn = new mysqli($servername, $username, $password);
+	$mysqli = new mysqli($servername, $username, $password);
 
 	// Check connection
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
+	if ($mysqli->connect_error) {
+	    die("Connection failed: " . $mysqli->connect_error);
 	    echo json_encode(array(success => false) + array(error => "Could not connect to Pebble Master Key Database."), JSON_PRETTY_PRINT);
 	}
 
-	if(isset($_GET['pin'])) $pin = $_GET['pin'];
+	if(isset($_GET['email']) && isset($_GET['pin'])){
+		$email = $mysqli->real_escape_string($_GET['email']);
+		$pin = $mysqli->real_escape_string($_GET['pin']);
+	}
 	else{
 		$array = array(success => false, error => "You must provide a PIN as a URL parameter (pin).");
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
 
-	$sql = "SELECT * FROM $tablename as kr WHERE kr.pin LIKE '$pin';";
+	$sql = "SELECT * FROM $tablename as kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
 	$result = $conn->query($sql);			
 
 	if($result->num_rows == 1){
