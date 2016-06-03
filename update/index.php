@@ -68,7 +68,6 @@
 
             echo "<br />ID<br />" . $id;
 
-            
           }
           else if(isset($_GET['email']){
             echo "STEP 4-B";
@@ -93,6 +92,8 @@
           }
 
           echo "STEP 5";
+
+          /*
           
           $wu = $result['wu'];
           $owm = $result['owm'];
@@ -106,9 +107,7 @@
 
           echo "Your PIN Code is: <strong>$pin</strong></font></div></div>";
 
-}/*
-
-          $mysqli->close();
+          //$mysqli->close();*/
         ?>
 
     <div class="item-container">
