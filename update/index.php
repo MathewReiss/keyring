@@ -91,6 +91,8 @@
           $travel = $result['travel'];
 
           echo "Your PIN Code is: <strong>$pin</strong></font></div></div>";
+
+          $mysqli->close();
         ?>
 
     <div class="item-container">
