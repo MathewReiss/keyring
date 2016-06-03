@@ -16,7 +16,7 @@
       <div class="item-container-footer"><font size="+1">
         <?php
           echo "STEP 1";
-
+          exit;
           $servername = "$_ENV[DB_SERVERNAME]";
           $username = "$_ENV[DB_USER]";
           $password = "$_ENV[DB_PASSWORD]";
