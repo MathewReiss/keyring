@@ -56,8 +56,9 @@
 
     function login(){
       var email = document.getElementById("email").value;
+      var patt = new RegExp(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i);
 
-      if(!email.test(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i)){
+      if(!patt.test(email)){
         alert("I\u0332n\u0332v\u0332a\u0332l\u0332i\u0332d\u0332 E\u0332m\u0332a\u0332i\u0332l\u0332\n\nPlease enter a valid email address.");
         return;
       }
