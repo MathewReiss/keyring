@@ -51,7 +51,7 @@
 
             $result = $mysqli->query($sql);
 
-            echo "<br />" . implode($result);
+            echo "<br />" . implode(" ", $result);
 
             }/*
             
