@@ -19,7 +19,7 @@
 	}
 
 	if(isset($_GET['email']) && isset($_GET['pin'])){
-		echo "Error?";
+		echo "Error? " . $_GET['email'] . ", " . $_GET['pin'];
 		$email = $mysqli->real_escape_string($_GET['email']);
 		$pin = $mysqli->real_escape_string($_GET['pin']);
 	}
