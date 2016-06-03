@@ -207,6 +207,7 @@
           }
           else{
             alert("E\u0332r\u0332r\u0332o\u0332r\u0332\n\nFor some reason, your API keys were not saved. Please contact support if this issue persists");
+            console.log(JSON.stringify(result));
           }
         }
       };
