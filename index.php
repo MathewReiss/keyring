@@ -20,13 +20,18 @@
         <div class="item-input-wrapper item-input-wrapper-button">
           <input type="text" class="item-input" id="email" name="email" placeholder="Your email address">
         </div>
+        <br />
         <div class="item-input-wrapper item-input-wrapper-button">
           <input type="number" class="item-input" id="pin" name="pin" placeholder="5-digit PIN">
         </div>
         <input type="button" class="item-button item-input-button" id="pin-button" name="pin-button" value="SIGN IN" onclick="login()">
       </label>
       <label class="item">
-        <center>Don't have a PIN? <a href="/update">Click here</a> to sign up for one.</center>
+        <center>Don't have a PIN? Enter your email below and click "Sign Up" to sign up for one.</center>
+        <div class="item-input=wrapper item-input-wrapper-button">
+          <input type="text" class="item-input" id="email2" name="email2" placeholder="Your email address">
+        </div>
+        <input type="button" class="item-button item-input-button" id="pin-button2" name="pin-button2" value="SIGN UP" onclick="register()">
       </label>
       <label class="item">
         <center>Forgot your PIN? Other issues? <a href="mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support" target="_blank">Contact Support</a>.</center>
@@ -74,8 +79,22 @@
         localStorage.setItem("savedEmail", email);
         localStorage.setItem("savedPin", pin);
 
-        document.location = document.location + "/update?email=" + email + "&pin=" + pin;
+        document.location = document.location + "/update/?email=" + email + "&pin=" + pin;
       }
+    }
+
+    function register(){
+      var email = document.getElementById("email").value;
+      var patt = new RegExp(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i);
+
+      if(!patt.test(email)){
+        alert("I\u0332n\u0332v\u0332a\u0332l\u0332i\u0332d\u0332 E\u0332m\u0332a\u0332i\u0332l\u0332\n\nPlease enter a valid email address.");
+        return;
+      }
+
+      localStorage.setItem("savedEmail", email);
+
+      document.location = document.location + "/update/?email=" + email;
     }
   </script>
 </body>
