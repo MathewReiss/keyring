@@ -69,7 +69,7 @@
             echo "<br />ID<br />" . $id;
 
           }
-          else if(isset($_GET['email']){
+          else if(isset($_GET['email'])){
             echo "STEP 4-B";
 
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
