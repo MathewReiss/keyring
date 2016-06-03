@@ -33,11 +33,13 @@
 
           echo "STEP 3";
 
-          echo implode(" ", $_GET);
-/*
-          if( isset($_GET['email'], $_GET['pin']) ){
+         
+
+          if( $_GET['email'] != "" &&  $_GET['pin'] != "" ){
             echo "STEP 4-A";
-}
+}else{
+echo "Step 4-B";
+}/*
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
             $pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
 
