@@ -84,7 +84,7 @@
     }
 
     function register(){
-      var email = document.getElementById("email").value;
+      var email = document.getElementById("email2").value;
       var patt = new RegExp(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i);
 
       if(!patt.test(email)){
