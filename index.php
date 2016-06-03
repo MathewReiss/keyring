@@ -79,7 +79,7 @@
         localStorage.setItem("savedEmail", email);
         localStorage.setItem("savedPin", pin);
 
-        document.location = document.location + "/update/?email=" + email + "&pin=" + pin;
+        document.location = document.location + "update/?email=" + email + "&pin=" + pin;
       }
     }
 
@@ -94,7 +94,7 @@
 
       localStorage.setItem("savedEmail", email);
 
-      document.location = document.location + "/update/?email=" + email;
+      document.location = document.location + "update/?email=" + email;
     }
   </script>
 </body>

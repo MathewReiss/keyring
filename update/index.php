@@ -187,7 +187,7 @@
       </div>
     </div>
 
-<!--
+<?php/*
     <div class="item-container">
       <div class="item-container-header">Travel/Departure (First Class)</div>
       <div class="item-container-content">
@@ -199,7 +199,7 @@
         </label>
       </div>
     </div>
--->
+*/?>
 
     <hr/>
     <br/>
