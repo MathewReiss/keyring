@@ -25,11 +25,7 @@ body {
   background-color: #EAEAEA;
   margin-bottom: 15px;
   font-size: 1.2em;
-  line-height: 1.4em;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important; }
+  line-height: 1.4em; }
 
 body, select, input[type=text], input[type=time], input[type=date] {
   font-family: 'PFDinDisplayPro-Light', PFDinDisplayProLightWebfont, sans-serif;
