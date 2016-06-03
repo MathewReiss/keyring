@@ -19,6 +19,8 @@
       <label class="item">
         <div class="item-input-wrapper item-input-wrapper-button">
           <input type="text" class="item-input" id="email" name="email" placeholder="Your email address">
+        </div>
+        <div class="item-input-wrapper item-input-wrapper-button">
           <input type="number" class="item-input" id="pin" name="pin" placeholder="5-digit PIN">
         </div>
         <input type="button" class="item-button item-input-button" id="pin-button" name="pin-button" value="SIGN IN" onclick="login()">

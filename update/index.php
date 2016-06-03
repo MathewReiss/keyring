@@ -32,7 +32,9 @@
             $email = $mysqli->real_escape_string($_GET['email']);
             $pin = $mysqli->real_escape_string($_GET['pin']);
 
-            $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email' AND kr.pin=$pin;";
+            echo $email . ", " . $pin;
+
+            $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email' AND kr.pin LIKE '$pin';";
             $result = $mysqli->query($sql);
             
             if($result->num_rows == 0){
