@@ -187,20 +187,6 @@
       </div>
     </div>
 
-<?php/*
-    <div class="item-container">
-      <div class="item-container-header">Travel/Departure (First Class)</div>
-      <div class="item-container-content">
-        <label class="item">
-          To get an API Key for Travel or Departure, open the Settings page for either in your Pebble Time app.
-          <div class="item-input-wrapper">
-            <input type="text" class="item-input" id="travel" name="travel" value="<?php echo $travel?>">
-          </div>
-        </label>
-      </div>
-    </div>
-*/?>
-
     <hr/>
     <br/>
 
