@@ -19,11 +19,8 @@
 	}
 
 	if(isset($_GET['email']) && isset($_GET['pin'])){
-		echo "Error? " . $_GET['email'] . ", " . $_GET['pin'];
 		$email = mysqli_real_escape_string($mysqli, $_GET['email']);
-		echo $email;
 		$pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
-		echo $pin;
 	}
 	else{
 		$array = array(success => false, error => "You must provide an Email and PIN as a URL parameter (pin).");
