@@ -47,9 +47,13 @@
             
             echo "<br />" . $sql;
 
-          }/*
+          
 
             $result = $mysqli->query($sql);
+
+            echo "<br />" . $result;
+
+            }/*
             
             if($result->num_rows == 0){
               $message = "Error retrieving PIN Code... (Err 2)";
