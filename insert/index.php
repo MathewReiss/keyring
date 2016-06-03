@@ -28,16 +28,7 @@
     $habits = mysqli_real_escape_string($mysqli, $_GET['habits']);
     $travel = mysqli_real_escape_string($mysqli, $_GET['travel']);
 
-    //New PIN
-    if(!is_null($id)){
-        $pin = bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
-    	$sql = "UPDATE $tablename SET pin='$pin', owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE id=$id AND email=$email;";
-    }
-    //Existing PIN
-    else{
-    	$sql = "UPDATE $tablename SET owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE pin=$pin AND email=$email;";
-    }
-
+    $sql = "UPDATE $tablename SET owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE email LIKE '$email' AND pin LIKE '$pin';";
     $result = $mysqli->query($sql);
 
     if($mysqli->affected_rows == 1){

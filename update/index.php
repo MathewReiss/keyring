@@ -42,8 +42,6 @@
               $result = $result->fetch_assoc();
               $pin = $result['pin'];
             }
-
-            $id = $result['id'];
           }
           else if(isset($_GET['email'])){
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
@@ -190,7 +188,7 @@
     function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
-      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&id=<?php echo $id?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value;// + "&travel=" + document.getElementById("travel").value;
+      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value;// + "&travel=" + document.getElementById("travel").value;
       xhr.open("GET", url, true);
 
       document.getElementById("save-button").value = "SAVING...";
