@@ -33,9 +33,11 @@
 
           echo "STEP 3";
 
-          if(isset($_GET['email'] && isset($_GET['pin'])){
+          echo $_GET;
+/*
+          if( isset($_GET['email'], $_GET['pin']) ){
             echo "STEP 4-A";
-}/*
+}
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
             $pin = mysqli_real_escape_string($mysqli, $_GET['pin']);
 
