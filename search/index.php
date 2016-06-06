@@ -1,7 +1,6 @@
 <?php
 	session_start();
     if(isset($_SESSION['LAST_CALL'])) {
-    	//echo "Session Last Call is set";
         $last = strtotime($_SESSION['LAST_CALL']);
         $curr = strtotime(date("Y-m-d h:i:s"));
         $sec = abs($last - $curr);
@@ -12,8 +11,6 @@
         }
     }
     $_SESSION['LAST_CALL'] = date("Y-m-d h:i:s");
-    //echo $_SESSION('LAST_CALL');
-    //echo "Session started...";
 
 	header("Access-Control-Allow-Headers: Content-Type");
 	header("Access-Control-Allow-Origin: *");
@@ -30,7 +27,6 @@
 
 	// Check connection
 	if ($mysqli->connect_error) {
-	    //die("Connection failed: " . $mysqli->connect_error);
 	    echo json_encode(array(success => false) + array(error => "Could not connect to Pebble Master Key Database."), JSON_PRETTY_PRINT);
 	    exit;
 	}
@@ -50,9 +46,6 @@
 
 	if($result->num_rows == 1){
 		$result = $result->fetch_assoc();
-		//unset($result['token']);
-		//unset($result['id']);
-		//$result = array(pin => $_GET['pin']*1) + array(success => true) + $result;
 
 		$weather_indices = [owm, wu, forecast];
 		$web_indices = [ifttt, wolfram];
@@ -61,24 +54,21 @@
 		$weather = [];
 		foreach($weather_indices as $key){
 			$weather += array($key => $result[$key]);
-			//unset($result[$key]);
 		}
 
 		$web = [];
 		foreach($web_indices as $key){
 			$web += array($key => $result[$key]);
-			//unset($result[$key]);
 		}
 
 		$pebble = [];
 		foreach($pebble_indices as $key){
 			$pebble += array($key => $result[$key]);
-			//unset($result[$key]);
 		}
 
 		$keys = array(weather => $weather, web => $web, pebble => $pebble);
 
-		$array = array(success => true, lastUpdated => $result['lastUpdated'], keys => $keys);
+		$array = array(success => true, message => isset($_SESSION['LAST_CALL']) ? $_SESSION['LAST_CALL'] : "No Session", lastUpdated => $result['lastUpdated'], keys => $keys);
 
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
