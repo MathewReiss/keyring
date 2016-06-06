@@ -4,7 +4,7 @@
         $last = strtotime($_SESSION('LAST_CALL'));
         $curr = strtotime(date("Y-m-d h:i:s"));
         $sec = abs($last - $curr);
-        if(sec <= 30){
+        if($sec <= 30){
         	header("Content-Type: application/json");
             echo json_encode(array(success => false, error => "Rate limit exceeded"));
             exit;
