@@ -93,6 +93,7 @@
       }
 
       localStorage.setItem("savedEmail", email);
+      localStorage.setItem("savedPin", "");
 
       document.location = document.location + "update/?email=" + email;
     }
