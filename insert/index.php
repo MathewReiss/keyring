@@ -31,10 +31,10 @@
     $result = $mysqli->query($sql);
 
     if($mysqli->affected_rows == 1){
-        echo json_encode(array(success => true));    
+        echo json_encode(array(success => true, numRows => 1));    
     }
     else{
-        echo json_encode(array(success => false, error => "No rows affected"));
+        echo json_encode(array(success => true, numRows => 0));
     }	
     $mysqli->close();  
 ?>

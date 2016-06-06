@@ -201,7 +201,8 @@
           var result = JSON.parse(xhr.responseText);
           
           if(result.success){
-            alert("Keys saved!");
+            if(result.numRows !== 0) alert("Keys saved!");
+            else alert("No changes to keys detected.");
           }
           else{
             alert("E\u0332r\u0332r\u0332o\u0332r\u0332\n\nFor some reason, your API keys were not saved. Please contact support if this issue persists");
