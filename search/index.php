@@ -1,6 +1,7 @@
 <?php
 	session_start();
     //if(isset($_SESSION('LAST_CALL'))) {
+    	//echo "Session Last Call is set";
     //    $last = strtotime($_SESSION('LAST_CALL'));
     //    $curr = strtotime(date("Y-m-d h:i:s"));
     //    $sec = abs($last - $curr);
@@ -10,9 +11,9 @@
     //        exit;
     //    }
     //}
-    //$_SESSION('LAST_CALL') = date("Y-m-d h:i:s");
-    //echo $_SESSION('LAST_CALL');
-    echo "Session started...";
+    $_SESSION('LAST_CALL') = date("Y-m-d h:i:s");
+    echo $_SESSION('LAST_CALL');
+    //echo "Session started...";
 
 	header("Access-Control-Allow-Headers: Content-Type");
 	header("Access-Control-Allow-Origin: *");
