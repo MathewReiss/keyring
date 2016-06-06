@@ -69,7 +69,7 @@
   
     xhr.open("GET", url, true);
   
-    xhr.onreadystatechanged = function(){
+    xhr.onreadystatechange = function(){
       if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){
         var result = JSON.parse(xhr.responseText);
         if(result.success &amp;&amp; result.keys.weather.wu !== ""){
