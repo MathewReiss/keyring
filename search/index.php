@@ -6,6 +6,9 @@
         $curr = strtotime(date("Y-m-d h:i:s"));
         $sec = abs($last - $curr);
         if($sec <= 30){
+        	header("Access-Control-Allow-Headers: Content-Type");
+			header("Access-Control-Allow-Origin: *");
+			header("Access-Control-Allow-Methods: GET");
         	header("Content-Type: application/json");
             echo json_encode(array(success => false, error => "Rate limit exceeded"));
             exit;
