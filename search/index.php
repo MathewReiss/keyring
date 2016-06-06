@@ -1,16 +1,17 @@
 <?php
 	session_start();
-    if(isset($_SESSION('LAST_CALL'))) {
-        $last = strtotime($_SESSION('LAST_CALL'));
-        $curr = strtotime(date("Y-m-d h:i:s"));
-        $sec = abs($last - $curr);
-        if($sec <= 30){
-        	header("Content-Type: application/json");
-            echo json_encode(array(success => false, error => "Rate limit exceeded"));
-            exit;
-        }
-    }
+    //if(isset($_SESSION('LAST_CALL'))) {
+    //    $last = strtotime($_SESSION('LAST_CALL'));
+    //    $curr = strtotime(date("Y-m-d h:i:s"));
+    //    $sec = abs($last - $curr);
+    //    if($sec <= 30){
+    //    	header("Content-Type: application/json");
+    //        echo json_encode(array(success => false, error => "Rate limit exceeded"));
+    //        exit;
+    //    }
+    //}
     $_SESSION('LAST_CALL') = date("Y-m-d h:i:s");
+    echo $_SESSION('LAST_CALL');
 
 	header("Access-Control-Allow-Headers: Content-Type");
 	header("Access-Control-Allow-Origin: *");
