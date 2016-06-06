@@ -24,7 +24,7 @@
 
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
-            echo "Error retrieving PIN Code... (Err 1)";
+            echo "Error: Connection Error. Please try again later. (Err 1)";
           }
 
           if(isset($_GET['email']) && isset($_GET['pin'])){
@@ -36,7 +36,7 @@
             $result = $mysqli->query($sql);
             
             if($result->num_rows == 0){
-              echo "Error retrieving PIN Code... (Err 2)";
+              echo "Error: Invalid Email/PIN combination. (Err 2)";
             }
             else{
               $result = $result->fetch_assoc();
@@ -58,7 +58,7 @@
             echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '";</script>';
           }
           else{
-            echo "Error with email... (Err 3)";
+            echo "Error: Must provide email to sign up for Master Key. (Err 3)";
           }
           
           $wu = $result['wu'];
