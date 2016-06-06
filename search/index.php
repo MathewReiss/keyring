@@ -5,7 +5,7 @@
         $last = strtotime($_SESSION['LAST_CALL']);
         $curr = strtotime(date("Y-m-d h:i:s"));
         $sec = abs($last - $curr);
-        if($sec <= 30){
+        if($sec <= 1){
         	header("Access-Control-Allow-Headers: Content-Type");
 			header("Access-Control-Allow-Origin: *");
 			header("Access-Control-Allow-Methods: GET");
