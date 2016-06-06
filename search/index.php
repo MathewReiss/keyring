@@ -72,7 +72,7 @@
 
 		$keys = array(weather => $weather, web => $web, pebble => $pebble);
 
-		$array = array(success => true, message => isset($_SESSION['LAST_CALL']) ? $_SESSION['LAST_CALL'] : "No Session", lastUpdated => $result['lastUpdated'], keys => $keys);
+		$array = array(success => true, lastUpdated => $result['lastUpdated'], keys => $keys);
 
 		echo json_encode($array, JSON_PRETTY_PRINT);
 	}
