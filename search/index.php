@@ -1,4 +1,5 @@
 <?php
+	session_id(isset($_GET['email']) ? $_GET['email'] : session_id());
 	session_start();
     if(isset($_SESSION['LAST_CALL'])) {
         $last = strtotime($_SESSION['LAST_CALL']);
