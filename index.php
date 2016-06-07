@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
   
-  <title>Pebble Master Key</title>
+  <title>Master Key</title>
   <link rel="stylesheet" href="/dist/css/slate.min.css">
   <link rel="icon" type="image/png" href="/favicon2.png">
   <script type="text/javascript" src="/dist/js/slate.min.js"></script>
 </head>
 <body style="margin-left: 10%; margin-right: 10%;">
   <div class="item-container">
-    <div class="item-container-header">Pebble Master Key</div>
+    <div class="item-container-header">Master Key</div>
     <div class="item-container-content">
       <label class="item">
-        Pebble Master Key is a new service for Pebble users. Get a unique PIN and add API Keys for your favorite online services.<br /><br />Then, enter your Email and PIN on the Settings page of any <a href="https://apps.getpebble.com/en_US/search/watchapps/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br /><em>No more annoying copy/paste from your phone browser.<br /><br />No more long alphanumeric codes to type on a tiny keyboard.</em><br /><br />Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
+        Master Key is a new service for Pebble users. Get a unique PIN and add API Keys for your favorite online services.<br /><br />Then, enter your Email and PIN on the Settings page of any <a href="https://apps.getpebble.com/en_US/search/watchapps/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br /><em>No more annoying copy/paste from your phone browser.<br /><br />No more long alphanumeric codes to type on a tiny keyboard.</em><br /><br />Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
       </label>
       <label class="item">
         <div class="item-input-wrapper item-input-wrapper-button">
