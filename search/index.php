@@ -14,7 +14,21 @@
             exit;
         }
     }
+    if(isset($_SESSION['NUM_CALLS'])){
+    	if($_SESSION['NUM_CALLS'] >= 10){
+    		header("Access-Control-Allow-Headers: Content-Type");
+			header("Access-Control-Allow-Origin: *");
+			header("Access-Control-Allow-Methods: GET");
+        	header("Content-Type: application/json");
+            echo json_encode(array(success => false, error => "Daily rate limit exceeded"));
+            exit;
+    	}
+    }
+    else{
+    	$_SESSION['NUM_CALLS'] = 0;
+    }
     $_SESSION['LAST_CALL'] = date("Y-m-d h:i:s");
+    $_SESSION['NUM_CALLS']++;
 
 	header("Access-Control-Allow-Headers: Content-Type");
 	header("Access-Control-Allow-Origin: *");
