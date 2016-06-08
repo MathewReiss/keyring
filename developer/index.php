@@ -32,16 +32,16 @@
     "lastUpdated" : "2016-06-02 14:25:42",
     "keys" : {
       "weather" : {
-        "owm" : "owmapikey",
-        "wu" : "wuapikey",
-        "forecast" : "forecastapikey"
+        "owm" : "OWM-API-KEY",
+        "wu" : "WU-API-KEY",
+        "forecast" : "FORECAST-API-KEY"
       },
       "web" : {
-        "ifttt" : "makerapikey",
-        "wolfram" : "wolframapikey"
+        "ifttt" : "IFTTT-MAKER-KEY",
+        "wolfram" : "WOLFRAM-API-KEY"
       },
       "pebble" : {
-        "habits" : "myhabitsapikey"
+        "habits" : "MY-HABITS-API-KEY"
       }
     }
   }
@@ -58,7 +58,7 @@
           <label class="item">
             <strong><font size="+2">Simple Settings Page Example</font></strong><br />
             Below is the Javascript code for a simple implementation of Master Key, using the "webviewclosed" event handler in PebbleKit JS.<br />
-            <pre>
+            <br /><pre>
   Pebble.addEventListener("webviewclosed", function(e){
     //Use the provided Master Key PIN to get relevant API keys, 
     //then store in localstorage.
@@ -85,7 +85,7 @@
           <label class="item">
             <strong><font size="+2">Advanced Settings Page Example</font></strong><br />
             Below is HTML and Javascript code for a more advanced implementation of Master Key, using Slate, directly in your Settings page.<br />
-            <pre>
+            <br /><pre>
   &lt;html&gt;
     &lt;head&gt;
       &lt;title&gt;My App Settings&lt;/title&gt;

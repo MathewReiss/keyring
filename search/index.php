@@ -67,7 +67,7 @@
 
 		$weather_indices = [owm, wu, forecast];
 		$web_indices = [ifttt, wolfram];
-		$pebble_indices = [habits, travel];
+		$pebble_indices = [habits];//, travel];
 
 		$weather = [];
 		foreach($weather_indices as $key){
