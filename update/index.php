@@ -59,7 +59,7 @@
               $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
               $mysqli->query($sql);
 
-              echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '";</script>';  
+              echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '"; localStorage.setItem("savedPin", "' . $pin . '"); </script>';  
             }
             else{
               die("Error: Email is already registered with Master Key. Please <a href='mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support' target='_blank'>contact Support</a>. (Err 3)");
