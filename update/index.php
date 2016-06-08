@@ -24,7 +24,7 @@
 
           if($mysqli->connect_error){
             //die("Connection failed: " . $conn->connect_error);
-            echo "Error: Connection Error. Please try again later. (Err 1)";
+            die("Error: Connection Error. Please try again later. (Err 1)");
           }
 
           if(isset($_GET['email']) && isset($_GET['pin'])){
@@ -36,7 +36,7 @@
             $result = $mysqli->query($sql);
             
             if($result->num_rows == 0){
-              echo "Error: Invalid Email/PIN combination. (Err 2)";
+              die("Error: Invalid Email/PIN combination. (Err 2)");
             }
             else{
               $result = $result->fetch_assoc();
@@ -46,19 +46,27 @@
           else if(isset($_GET['email'])){
             $email = mysqli_real_escape_string($mysqli, $_GET['email']);
 
-            $sql = "INSERT INTO $tablename (email) VALUES ('$email');";
-            $mysqli->query($sql);
+            $sql = "SELECT * FROM $tablename AS kr WHERE kr.email LIKE '$email';";
+            $result = $mysqli->query($sql);
 
-            $id = $mysqli->insert_id;
-            $pin = bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
+            if($result->num_rows == 0){
+              $sql = "INSERT INTO $tablename (email) VALUES ('$email');";
+              $mysqli->query($sql);
 
-            $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
-            $mysqli->query($sql);
+              $id = $mysqli->insert_id;
+              $pin = bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
 
-            echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '";</script>';
+              $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
+              $mysqli->query($sql);
+
+              echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '";</script>';  
+            }
+            else{
+              die("Error: Email is already registered with Master Key. Please <a href='mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support' target='_blank'>contact Support</a>. (Err 3)");
+            }
           }
           else{
-            echo "Error: Must provide email to sign up for Master Key. (Err 3)";
+            die("Error: Must provide email to sign up for Master Key. (Err 4)");
           }
           
           $wu = $result['wu'];
