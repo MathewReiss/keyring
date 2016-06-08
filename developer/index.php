@@ -46,9 +46,9 @@
     }
   }
             </pre>
-            <em>Keep in mind that any one of these keys could be returned as an empty string</em>.<br /><br />
+            <em>Keep in mind that any one of these keys could be returned as an empty string, or null if the user has created an account but not attempted to save any API keys</em>.<br /><br />
             If there is an error with your request, the JSON response will look like the following:<br />
-            <pre>
+            <br /><pre>
   {
     "success" : false,
     "error" : "Could not locate any keys for that PIN."
