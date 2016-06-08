@@ -26,7 +26,7 @@
             <strong><font size="+2">API Endpoint</font></strong><br />
             To get the relevant API keys, simply call the following URL via HTTP GET, passing the user's email and PIN as parameters: <pre>https://pmkey.xyz/search/?email=testuser@email.com&amp;pin=10000</pre><br />
             The JSON response will look like the following:<br />
-            <pre>
+            <br /><pre>
   {
     "success" : true,
     "lastUpdated" : "2016-06-02 14:25:42",
