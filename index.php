@@ -36,8 +36,10 @@
       <label class="item">
         <center>Forgot your PIN? Other issues? <a href="mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support" target="_blank">Contact Support</a>.</center>
       </label>
+      <label class="item">
+        <em>Are you a Developer interested in integrating Master Key into your Pebble watchface or app? <a href="/developer">Click here</a> for Master Key Documentation and Example Implementations</em>.
+      </label>
     </div>
-    <div class="item-container-footer">Are you a Developer interested in integrating Master Key into your Pebble watchface or app? <a href="/developer">Click here</a> for Master Key Documentation and Example Implementations.</div>
     <div class="item-container-footer">Master Key is a 3rd Party Service not affiliated with Pebble Technology Corp. All references to Pebble™ are purely for descriptive purposes.</div>
   </div>
 
