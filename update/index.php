@@ -170,9 +170,21 @@
       <div class="item-container-header">My Habits</div>
       <div class="item-container-content">
         <label class="item">
-          To get an API Key for My Habits, open the Settings page in your Pebble Time app. For more details, visit the <a href="https://my-habits.net/about" target="_blank">My Habits website</a>.
+          To get an API Key for My Habits, open the Habits Settings page in your Pebble Time app (My Habits users only). For more details, visit the <a href="https://my-habits.net/about" target="_blank">My Habits website</a>.
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="habits" name="habits" value="<?php echo $habits?>">
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Priority Access</div>
+      <div class="item-container-content">
+        <label class="item">
+          To get an API Key for Priority Access, open the Travel or Departure Settings page in your Pebble Time app (First-Class users only).</a>.
+          <div class="item-input-wrapper">
+            <input type="text" class="item-input" id="travel" name="travel" value="<?php echo $travel?>">
           </div>
         </label>
       </div>
