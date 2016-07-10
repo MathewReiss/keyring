@@ -182,7 +182,7 @@
       <div class="item-container-header">Priority Access</div>
       <div class="item-container-content">
         <label class="item">
-          To get an API Key for Priority Access, open the Travel or Departure Settings page in your Pebble Time app (First-Class users only).</a>.
+          To get an API Key for Priority Access, open the Travel Settings page in your Pebble Time app (First-Class users only).</a>.
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="travel" name="travel" value="<?php echo $travel?>">
           </div>
