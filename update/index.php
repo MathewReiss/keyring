@@ -200,15 +200,15 @@
         <label class="item">
           Set a home address by name, or by GPS coordinates, for Pebble apps and watchfaces to use as a default location. 
           <div class="item-input-wrapper">
-          Home Address
+          <font size="-1">Address</font>
             <input type="text" class="item-input" id="home_addr" name="home_addr" value="<?php echo $home_addr?>">
           </div>
           <div class="item-input-wrapper">
-          Home Latitude
+          <font size="-1">Latitude</font>
             <input type="text" class="item-input" id="home_lat" name="home_lat" value="<?php echo $home_lat?>">
           </div>
           <div class="item-input-wrapper">
-          Home Longitude
+          <font size="-1">Longitude</font>
             <input type="text" class="item-input" id="home_lon" name="home_lon" value="<?php echo $home_lon?>">
           </div>
         </label>
