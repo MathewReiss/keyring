@@ -233,7 +233,7 @@
     function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
-      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&travel=" + document.getElementById("travel").value + "&home_addr=" + document.getElementById("home_addr") + "&home_lat=" + document.getElementById("home_lat") + "&home_lon=" + document.getElementById("home_lon");
+      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&travel=" + document.getElementById("travel").value + "&home_addr=" + document.getElementById("home_addr").value + "&home_lat=" + document.getElementById("home_lat").value + "&home_lon=" + document.getElementById("home_lon").value;
       xhr.open("GET", url, true);
 
       document.getElementById("save-button").value = "SAVING...";
