@@ -68,6 +68,7 @@
 		$weather_indices = [owm, wu, forecast];
 		$web_indices = [ifttt, wolfram];
 		$pebble_indices = [habits, travel];
+		$home_indices = [home_addr, home_lat, home_lon];
 
 		$weather = [];
 		foreach($weather_indices as $key){
@@ -84,7 +85,12 @@
 			$pebble += array($key => $result[$key]);
 		}
 
-		$keys = array(weather => $weather, web => $web, pebble => $pebble);
+		$home = [];
+		foreach($home_indices as $key){
+			$home += array($key => $result[$key]);
+		}
+
+		$keys = array(weather => $weather, web => $web, pebble => $pebble, home => $home);
 
 		$array = array(success => true, lastUpdated => $result['lastUpdated'], keys => $keys);
 

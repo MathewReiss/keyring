@@ -79,6 +79,10 @@
           $habits = $result['habits'];
           $travel = $result['travel'];
 
+          $home_addr = $result['home_addr'];
+          $home_lat = $result['home_lat'];
+          $home_lon = $result['home_lon'];
+
           echo "Your PIN Code is: <strong>$pin</strong></font></div></div>";
 
           $mysqli->close();
@@ -190,6 +194,27 @@
       </div>
     </div>
 
+    <div class="item-container">
+      <div class="item-container-header">Home Address</div>
+      <div class="item-container-content">
+        <label class="item">
+          Set a home address by name, or by GPS coordinates, for Pebble apps and watchfaces to use as a default location. 
+          <div class="item-input-wrapper">
+          Home Address
+            <input type="text" class="item-input" id="home_addr" name="home_addr" value="<?php echo $home_addr?>">
+          </div>
+          <div class="item-input-wrapper">
+          Home Latitude
+            <input type="text" class="item-input" id="home_lat" name="home_lat" value="<?php echo $home_lat?>">
+          </div>
+          <div class="item-input-wrapper">
+          Home Longitude
+            <input type="text" class="item-input" id="home_lon" name="home_lon" value="<?php echo $home_lon?>">
+          </div>
+        </label>
+      </div>
+    </div>
+
     <hr/>
     <br/>
 
@@ -208,7 +233,7 @@
     function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
-      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&travel=" + document.getElementById("travel").value;
+      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&travel=" + document.getElementById("travel").value + "&home_addr=" + document.getElementById("home_addr") + "&home_lat=" + document.getElementById("home_lat") + "&home_lon=" + document.getElementById("home_lon");
       xhr.open("GET", url, true);
 
       document.getElementById("save-button").value = "SAVING...";

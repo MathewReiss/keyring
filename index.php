@@ -14,7 +14,7 @@
     <div class="item-container-header">Master Key</div>
     <div class="item-container-content">
       <label class="item">
-        Master Key is a new service for Pebble users. Get a unique PIN and add API Keys for your favorite online services.<br /><br />Then, enter your Email and PIN on the Settings page of any <a href="https://apps.getpebble.com/en_US/search/watchapps/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br /><em>No more annoying copy/paste from your phone browser.<br /><br />No more long alphanumeric codes to type on a tiny keyboard.</em><br /><br />Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
+        Master Key is a service for Pebble users. Get a unique PIN and add API Keys for your favorite online services.<br /><br />Then, enter your Email and PIN on the Settings page of any <a href="https://apps.getpebble.com/en_US/search/watchfaces/1?native=false&query=pmkey.xyz" target="_blank">Master Key-enabled watchface or app</a>, and that's it!<br /><br /><em>No more annoying copy/paste from your phone browser.<br /><br />No more long alphanumeric codes to type on a tiny keyboard.</em><br /><br />Encourage the developers of your favorite Pebble faces and apps to start using Master Key, today!
       </label>
       <label class="item">
         <div class="item-input-wrapper item-input-wrapper-button">

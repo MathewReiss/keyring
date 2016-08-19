@@ -27,7 +27,11 @@
     $habits = mysqli_real_escape_string($mysqli, $_GET['habits']);
     $travel = mysqli_real_escape_string($mysqli, $_GET['travel']);
 
-    $sql = "UPDATE $tablename SET owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel' WHERE email LIKE '$email' AND pin LIKE '$pin';";
+    $home_addr = mysqli_real_escape_string($mysqli, $_GET['home_addr']);
+    $home_lat = mysqli_real_escape_string($mysqli, $_GET['home_lat']);
+    $home_lon = mysqli_real_escape_string($mysqli, $_GET['home_lon']);
+
+    $sql = "UPDATE $tablename SET owm='$owm', wu='$wu', forecast='$forecast', ifttt='$ifttt', wolfram='$wolfram', habits='$habits', travel='$travel', home_addr='$home_addr', home_lat='$home_lat', home_lon='$home_lon' WHERE email LIKE '$email' AND pin LIKE '$pin';";
     $result = $mysqli->query($sql);
 
     if($mysqli->affected_rows == 1){
