@@ -77,6 +77,7 @@
           $wolfram = $result['wolfram'];
 
           $habits = $result['habits'];
+          $stepverse = $result['stepverse'];
           $travel = $result['travel'];
 
           $home_addr = $result['home_addr'];
@@ -183,6 +184,18 @@
     </div>
 
     <div class="item-container">
+      <div class="item-container-header">StepVerse</div>
+      <div class="item-container-content">
+        <label class="item">
+          To get an API Key for StepVerse, open the StepVerse Friends Settings page in your Pebble Time app. For more details, visit the <a href="https://stepverse.com" target="_blank">StepVerse website</a>.
+          <div class="item-input-wrapper">
+            <input type="text" class="item-input" id="stepverse" name="stepverse" value="<?php echo $stepverse?>">
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="item-container">
       <div class="item-container-header">Travel Priority Access</div>
       <div class="item-container-content">
         <label class="item">
@@ -233,7 +246,7 @@
     function saveKeys(){
       var xhr = new XMLHttpRequest();
       var url = "https://www.pmkey.xyz/insert/index.php";
-      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&travel=" + document.getElementById("travel").value + "&home_addr=" + document.getElementById("home_addr").value + "&home_lat=" + document.getElementById("home_lat").value + "&home_lon=" + document.getElementById("home_lon").value;
+      url += "?email=<?php echo $email?>&pin=<?php echo $pin?>&owm=" + document.getElementById("owm").value + "&wu=" + document.getElementById("wu").value + "&forecast=" + document.getElementById("forecast").value + "&ifttt=" + document.getElementById("ifttt").value + "&wolfram=" + document.getElementById("wolfram").value + "&habits=" + document.getElementById("habits").value + "&stepverse=" + document.getElementById("stepverse").value + "&travel=" + document.getElementById("travel").value + "&home_addr=" + document.getElementById("home_addr").value + "&home_lat=" + document.getElementById("home_lat").value + "&home_lon=" + document.getElementById("home_lon").value;
       xhr.open("GET", url, true);
 
       document.getElementById("save-button").value = "SAVING...";

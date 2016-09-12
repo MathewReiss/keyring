@@ -67,7 +67,7 @@
 
 		$weather_indices = [owm, wu, forecast];
 		$web_indices = [ifttt, wolfram];
-		$pebble_indices = [habits, travel];
+		$pebble_indices = [habits, stepverse, travel];
 		$home_indices = [home_addr, home_lat, home_lon];
 
 		$weather = [];
