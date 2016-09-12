@@ -184,10 +184,10 @@
     </div>
 
     <div class="item-container">
-      <div class="item-container-header">StepVerse</div>
+      <div class="item-container-header">StepVerse Sync</div>
       <div class="item-container-content">
         <label class="item">
-          To get an API Key for StepVerse, open the StepVerse Friends Settings page in your Pebble Time app. For more details, visit the <a href="https://stepverse.com" target="_blank">StepVerse website</a>.
+          To get an API Key for StepVerse, open the StepVerse Settings page in your Pebble Time app. For more details, visit the <a href="https://stepverse.com" target="_blank">StepVerse website</a>.
           <div class="item-input-wrapper">
             <input type="text" class="item-input" id="stepverse" name="stepverse" value="<?php echo $stepverse?>">
           </div>
