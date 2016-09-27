@@ -1,3 +1,7 @@
+<?php
+
+define('POSTMARK_API_KEY', "$_ENV[POSTMARK_API_KEY]");
+
 function send_email($email, &$response = null, &$http_code = null) {
     $json = json_encode(array(
         'From' => $email['from'],
@@ -47,3 +51,5 @@ echo 'The JSON response from Postmark:<br />';
 print_r($response);
 echo 'The HTTP code was: ' . $http_code;
 echo '</pre>';
+
+?>
