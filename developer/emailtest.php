@@ -94,17 +94,7 @@ $sent = send_email(array(
         }
     </style>
     
-    <style>
-    	a:visited
-	{
-		color:#AAAAAA
-	}
-
-	a
-	{
-		color:#FFFFFF
-	}
-    </style>
+    <style>a:visited {color: #FF0000}</style>
 
 
 </head>
