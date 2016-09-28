@@ -155,13 +155,12 @@ send_email(array(
                                     <table width="640" border="0" cellspacing="0" cellpadding="20" class="100p">
                                         <tr>
                                             <td valign="top">                                               
-                                                <table border="0" cellspacing="0" cellpadding="0" width="600" class="100p">   
-						      <tr>		
- -                                                        <td height="10"></td>		
- -                                                    </tr>
+                                                <table border="0" cellspacing="0" cellpadding="0" width="600" class="100p">
+                                                    <tr>
+                                                        <td height="10"></td>
+                                                    </tr>
                                                     <tr>
                                                         <td align="center" style="color:#FFFFFF; font-size:24px;">
-								
                                                             <font face="\'Roboto\', Arial, sans-serif">
                                                                 <span style="font-size:44px;">Thanks for signing up!</span><br />
                                                                 <br />
@@ -179,14 +178,13 @@ send_email(array(
                                                                     <tr>
                                                                         <td align="center" style="color:#FFFFFF; font-size:16px;"><font face="\'Roboto\', Arial, sans-serif"><a href="https://apps.getpebble.com/en_US/collection/master-key/watchfaces/1" style="color:#FFFFFF; text-decoration:none;">View Enabled Watchfaces</a></font></td>
                                                                     </tr>
-                                                                </table>													
-					
-                                                            </font>		    
-             	                                        </td>
+                                                                </table>
+                                                            </font>
+                                                        </td>
                                                     </tr>
-						    <tr>		
- -                                                        <td align="center" style="color:#AAAAAA; font-size:8px;"><font face="\'Roboto\', Arial, sans-serif"><br /><br />For more information, visit <a href="https://pmkey.xyz"  target="_blank" style="text-decoration: none">pmkey.xyz</a>.</font></td>		
- -                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="color:#AAAAAA; font-size:8px;"><font face="\'Roboto\', Arial, sans-serif"><br /><br />For more information, visit <a href="https://pmkey.xyz"  target="_blank" style="text-decoration: none">pmkey.xyz</a>.</font></td>
+                                                    </tr>
                                                 </table>
                                             </td>
                                         </tr>
