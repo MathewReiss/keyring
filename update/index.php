@@ -189,6 +189,13 @@
               $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
               curl_close($ch);
            
+	      if($http_code === 200){
+	        echo "Confirmation email sent!";
+	      }
+	      else{
+		echo "Could not send confirmation email.";
+	      }
+		    
               //END OF CONFIRMATION EMAIL CODE
               
             }
