@@ -35,10 +35,10 @@ function send_email($email, &$response = null, &$http_code = null) {
 $sent = send_email(array(
     'to' => 'mathewreiss@gmail.com',
     'from' => 'PIN Bot <donotreply@pmkey.xyz>',
-    'subject' => 'Master Key PIN',
-    'text_body' => 'Thank you for signing up for Master Key! Your email address is "hello@email.com" and your PIN is "12345".',
-    'html_body' => '<html><body>Test?</body></html>'
-'
+    'subject' => 'That was easy',
+    'text_body' => 'This will be shown to plain-text mail clients',
+    'html_body' => '<html><body>But <em>this</em> will be shown to HTML mail clients</body></html>'
+
 ), $response, $http_code);
 // Did it send successfully?
 if( $sent ) {
