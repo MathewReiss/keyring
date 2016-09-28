@@ -57,9 +57,7 @@
               $pin = rand(10000,99999);//bindec(strrev(str_pad(decbin($id), 16, '0', STR_PAD_LEFT))) + 10000;
 
               $sql = "UPDATE $tablename SET pin='$pin' WHERE id=$id;";
-              $mysqli->query($sql);
-
-              echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '"; localStorage.setItem("savedPin", "' . $pin . '"); </script>';  
+              $mysqli->query($sql);  
               
               //START OF CONFIRMATION EMAIL CODE
               
@@ -190,14 +188,15 @@
               curl_close($ch);
            
 	      if($http_code === 200){
-	        echo "Confirmation email sent!";
+	        echo "<script>alert('Confirmation email sent!');</script>";
 	      }
 	      else{
-		echo "Could not send confirmation email.";
+		echo "<script>alert('Could not send confirmation email.');</script>";
 	      }
 		    
               //END OF CONFIRMATION EMAIL CODE
               
+	      echo '</font></div></div><script>document.location = document.location + "&pin=' . $pin . '"; localStorage.setItem("savedPin", "' . $pin . '"); </script>';
             }
             else{
               die("Error: Email is already registered with Master Key. Please <a href='mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support' target='_blank'>contact Support</a>. (Err 3)");
