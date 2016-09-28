@@ -167,9 +167,9 @@ send_email(array(
                                                                 <Span style="font-size:24px;">With Master Key, you\'ve just unlocked a world of possiblities.</Span>
                                                                 <br /><br />
 																
-																<Span style="font-size:24px;"><em>Your Email is <strong>hello@email.com</strong>.</em></Span>
+																<Span style="font-size:24px;"><em>Your Email is <strong>' . $email . '</strong>.</em></Span>
                                                                 <br /><br />
-																<Span style="font-size:24px;"><em>Your PIN is <strong>12345</strong>.</em></Span>
+																<Span style="font-size:24px;"><em>Your PIN is <strong>' . $pin . '</strong>.</em></Span>
                                                                 <br />
                                                                 <hr />
                                                                 <Span style="font-size:24px;">See what watchfaces support Master Key!</Span>
