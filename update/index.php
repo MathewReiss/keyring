@@ -161,10 +161,10 @@ send_email(array(
                                                     </tr>
                                                     <tr>
                                                         <td align="center" style="color:#FFFFFF; font-size:24px;">
-                                                            <font face="'Roboto', Arial, sans-serif">
+                                                            <font face="\'Roboto\', Arial, sans-serif">
                                                                 <span style="font-size:44px;">Thanks for signing up!</span><br />
                                                                 <br />
-                                                                <Span style="font-size:24px;">With Master Key, you've just unlocked a world of possiblities.</Span>
+                                                                <Span style="font-size:24px;">With Master Key, you\'ve just unlocked a world of possiblities.</Span>
                                                                 <br /><br />
 																
 																<Span style="font-size:24px;"><em>Your Email is <strong>hello@email.com</strong>.</em></Span>
@@ -176,14 +176,14 @@ send_email(array(
                                                                 <br /><br />
                                                                 <table border="0" cellspacing="0" cellpadding="10" style="border:2px solid #FFFFFF;">
                                                                     <tr>
-                                                                        <td align="center" style="color:#FFFFFF; font-size:16px;"><font face="'Roboto', Arial, sans-serif"><a href="https://apps.getpebble.com/en_US/collection/master-key/watchfaces/1" style="color:#FFFFFF; text-decoration:none;">View Enabled Watchfaces</a></font></td>
+                                                                        <td align="center" style="color:#FFFFFF; font-size:16px;"><font face="\'Roboto\', Arial, sans-serif"><a href="https://apps.getpebble.com/en_US/collection/master-key/watchfaces/1" style="color:#FFFFFF; text-decoration:none;">View Enabled Watchfaces</a></font></td>
                                                                     </tr>
                                                                 </table>
                                                             </font>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td align="center" style="color:#AAAAAA; font-size:8px;"><font face="'Roboto', Arial, sans-serif"><br /><br />For more information, visit <a href="https://pmkey.xyz"  target="_blank" style="text-decoration: none">pmkey.xyz</a>.</font></td>
+                                                        <td align="center" style="color:#AAAAAA; font-size:8px;"><font face="\'Roboto\', Arial, sans-serif"><br /><br />For more information, visit <a href="https://pmkey.xyz"  target="_blank" style="text-decoration: none">pmkey.xyz</a>.</font></td>
                                                     </tr>
                                                 </table>
                                             </td>
