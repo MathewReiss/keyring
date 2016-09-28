@@ -92,7 +92,7 @@ function send_email($email, &$response = null, &$http_code = null) {
     return $http_code === 200;
 }
 
-$sent = send_email(array(
+send_email(array(
     'to' => $email,
     'from' => 'Master Key <donotreply@pmkey.xyz>',
     'subject' => 'Your Master Key PIN',
