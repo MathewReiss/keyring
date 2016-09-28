@@ -93,10 +93,6 @@ $sent = send_email(array(
             *[class="100padtopbottom"] {width:100% !important; padding:20px 0px 20px 0px;} 
         }
     </style>
-    
-    <style>a:visited {color: #FF0000}</style>
-
-
 </head>
 
 <body style="padding:0; margin:0" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
