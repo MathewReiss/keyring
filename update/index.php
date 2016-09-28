@@ -62,19 +62,19 @@
 		  //BEGIN EMAIL CODE 
 		    
 	      define('POSTMARK_API_KEY', "$_ENV[POSTMARK_API_KEY]");
-function send_email($email, &$response = null, &$http_code = null) {
+function send_email($sendemail, &$response = null, &$http_code = null) {
     $json = json_encode(array(
-        'From' => $email['from'],
-        'To' => $email['to'],
-        'Cc' => $email['cc'],
-        'Bcc' => $email['bcc'],
-        'Subject' => $email['subject'],
-        'Tag' => $email['tag'],
-        'HtmlBody' => $email['html_body'],
-        'TextBody' => $email['text_body'],
-        'ReplyTo' => $email['reply_to'],
-        'Headers' => $email['headers'],
-        'Attachments' => $email['attachments']
+        'From' => $sendemail['from'],
+        'To' => $sendemail['to'],
+        'Cc' => $sendemail['cc'],
+        'Bcc' => $sendemail['bcc'],
+        'Subject' => $sendemail['subject'],
+        'Tag' => $sendemail['tag'],
+        'HtmlBody' => $sendemail['html_body'],
+        'TextBody' => $sendemail['text_body'],
+        'ReplyTo' => $sendemail['reply_to'],
+        'Headers' => $sendemail['headers'],
+        'Attachments' => $sendemail['attachments']
     ));
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://api.postmarkapp.com/email');
@@ -93,7 +93,7 @@ function send_email($email, &$response = null, &$http_code = null) {
 }
 
 send_email(array(
-    'to' => $email,
+    'to' => $_GET['email'],
     'from' => 'Master Key <donotreply@pmkey.xyz>',
     'subject' => 'Your Master Key PIN',
     'text_body' => 'Your email is ' . $email . ' and your PIN is ' . $pin . '.',
