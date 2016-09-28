@@ -49,7 +49,17 @@ $sent = send_email(array(
     <title>Page title</title>
 
     <style type="text/css"> 
-        @import url(http://fonts.googleapis.com/css?family=Roboto:300); /*Calling our web font*/
+    	@import url(http://fonts.googleapis.com/css?family=Roboto:300); /*Calling our web font*/
+	
+	a:visited
+	{
+		color:#AAAAAA
+	}
+
+	a
+	{
+		color:#FFFFFF
+	}
 
         /* Some resets and issue fixes */
         #outlook a { padding:0; }
