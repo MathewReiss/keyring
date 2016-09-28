@@ -32,12 +32,15 @@ function send_email($email, &$response = null, &$http_code = null) {
     return $http_code === 200;
 }
 
+$email = 'mathewreiss@gmail.com';
+$pin = '12345';
+
 $sent = send_email(array(
-    'to' => 'mathewreiss@gmail.com',
+    'to' => $email,
     'from' => 'PIN Bot <donotreply@pmkey.xyz>',
     'subject' => 'That was easy',
-    'text_body' => 'This will be shown to plain-text mail clients',
-    'html_body' => '<html><body>But <em>this</em> will be shown to HTML mail clients</body></html>'
+    'text_body' => 'Your email is ' . $email . ' and your PIN is ' . $pin . '.',
+    'html_body' => '<html><body>Your email is <em>' . $email . '</em> and your PIN is <strong>' . $pin . '</strong>.</body></html>'
 
 ), $response, $http_code);
 // Did it send successfully?
