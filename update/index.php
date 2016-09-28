@@ -179,10 +179,7 @@ send_email(array(
                                                                     <tr>
                                                                         <td align="center" style="color:#FFFFFF; font-size:16px;"><font face="\'Roboto\', Arial, sans-serif"><a href="https://apps.getpebble.com/en_US/collection/master-key/watchfaces/1" style="color:#FFFFFF; text-decoration:none;">View Enabled Watchfaces</a></font></td>
                                                                     </tr>
-                                                                </table>
-								
-								
-								 <td align="center" style="color:#AAAAAA; font-size:8px;"><font face="\'Roboto\', Arial, sans-serif"><br /><br />For more information, visit <a href="https://pmkey.xyz"  target="_blank" style="text-decoration: none">pmkey.xyz</a>.</font></td>
+                                                                </table>													
 					
                                                             </font>		    
              	                                        </td>
