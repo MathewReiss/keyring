@@ -51,16 +51,6 @@ $sent = send_email(array(
     <style type="text/css"> 
     	@import url(http://fonts.googleapis.com/css?family=Roboto:300); /*Calling our web font*/
 	
-	a:visited
-	{
-		color:#AAAAAA
-	}
-
-	a
-	{
-		color:#FFFFFF
-	}
-
         /* Some resets and issue fixes */
         #outlook a { padding:0; }
         body{ width:100% !important; -webkit-text; size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; }     
@@ -102,6 +92,18 @@ $sent = send_email(array(
             /* 100percent width section with 20px padding top & bottom */
             *[class="100padtopbottom"] {width:100% !important; padding:20px 0px 20px 0px;} 
         }
+    </style>
+    
+    <style>
+    	a:visited
+	{
+		color:#AAAAAA
+	}
+
+	a
+	{
+		color:#FFFFFF
+	}
     </style>
 
 
