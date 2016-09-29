@@ -164,7 +164,7 @@ send_email(array(
                                                             <font face="\'Roboto\', Arial, sans-serif">
                                                                 <span style="font-size:44px;">Thanks for signing up!</span><br />
                                                                 <br />
-                                                                <Span style="font-size:24px;">With Master Key, you\'ve just unlocked a world of possiblities.</Span>
+                                                                <Span style="font-size:24px;">With Master Key, you\'ve just unlocked a world of possibilities.</Span>
                                                                 <br /><br />
 																
 																<Span style="font-size:24px;"><em>Your Email is <strong><a href="mailto:' . $email . '" style="color: white;">' . $email . '</a></strong>.</em></Span>
