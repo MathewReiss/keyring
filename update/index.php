@@ -167,7 +167,7 @@ send_email(array(
                                                                 <Span style="font-size:24px;">With Master Key, you\'ve just unlocked a world of possiblities.</Span>
                                                                 <br /><br />
 																
-																<Span style="font-size:24px;"><em>Your Email is <strong>' . $email . '</strong>.</em></Span>
+																<Span style="font-size:24px;"><em>Your Email is <strong><a href="mailto:' . $email . '" style="color: white;">' . $email . '</a></strong>.</em></Span>
                                                                 <br /><br />
 																<Span style="font-size:24px;"><em>Your PIN is <strong>' . $pin . '</strong>.</em></Span>
                                                                 <br />
@@ -183,7 +183,7 @@ send_email(array(
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td align="center" style="color:#AAAAAA; font-size:8px;"><font face="\'Roboto\', Arial, sans-serif"><br /><br />For more information, visit <a href="https://pmkey.xyz"  target="_blank" style="text-decoration: none">pmkey.xyz</a>.</font></td>
+                                                        <td align="center" style="color:#AAAAAA; font-size:8px;"><font face="\'Roboto\', Arial, sans-serif"><br /><br />For more information, visit <a href="https://pmkey.xyz"  target="_blank" style="text-decoration: none; color: white;">pmkey.xyz</a>.</font></td>
                                                     </tr>
                                                 </table>
                                             </td>
