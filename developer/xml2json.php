@@ -16,6 +16,6 @@
   $xml_string = file_get_contents($url);
   $xml = simplexml_load_string($xml_string);
   
-  echo json_encode(array(success => true, xml => json_encode($xml)), JSON_PRETTY_PRINT);
+  echo json_encode($xml, JSON_PRETTY_PRINT);
  
 ?>
