@@ -34,9 +34,6 @@
         <input type="button" class="item-button item-input-button" id="pin-button2" name="pin-button2" value="SIGN UP" onclick="register()">
       </label>
       <label class="item">
-        <center>Forgot your PIN? Other issues? <a href="mailto:mydogsnowy.pebble@gmail.com?subject=Master Key Support" target="_blank">Contact Support</a>.</center>
-      </label>
-      <label class="item">
         <em>Are you a Developer interested in integrating Master Key into your Pebble watchface or app? <a href="/developer">Click here</a> for Master Key Documentation and Example Implementations</em>.
       </label>
     </div>
@@ -75,7 +72,7 @@
       var pin = document.getElementById("pin").value;
 
       if(pin === null || isNaN(pin) || pin < 10000 || pin > 99999){
-        alert("I\u0332n\u0332v\u0332a\u0332l\u0332i\u0332d\u0332 P\u0332I\u0332N\u0332\n\nPlease enter your 5-digit PIN. If you do not remember it, please contact support.");
+        alert("I\u0332n\u0332v\u0332a\u0332l\u0332i\u0332d\u0332 P\u0332I\u0332N\u0332\n\nPlease enter your 5-digit PIN.");
       }
       else{
         localStorage.setItem("savedEmail", email);
